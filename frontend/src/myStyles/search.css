@@ -1,0 +1,21 @@
+.search-box{
+    /* background-color: red; */
+    position: relative;
+}
+.search-input{
+    width: 200px;
+    height: 25px;
+    font-family: 'Nunito';
+}
+.suggestions-container{
+    list-style-type: none;
+    /* background-color: green; */
+    /* min-height: 90px; */
+    position: absolute;
+    top: 30px;
+    margin: 0;
+    width: 100%;
+}
+.list-container{
+    font-family: 'Nunito';
+}
