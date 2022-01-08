@@ -18,7 +18,7 @@ router.get('/search', async (req, res) => {
                         query: term,
                         path: "name",
                         fuzzy: {
-                            'maxEdits': 2
+                            'maxEdits': 1
                         }
                     }
                 }

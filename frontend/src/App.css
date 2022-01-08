@@ -12,6 +12,9 @@
     object-fit: contain;
     width: 100%;
     height: 100%;
+
+}
+.image-blend{
     mix-blend-mode: multiply;
     filter: saturate(101%) brightness(105%) contrast(105%);
 }

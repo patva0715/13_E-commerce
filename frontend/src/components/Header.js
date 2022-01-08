@@ -5,12 +5,14 @@ import Search from './Search'
 const Header = () => {
     return (
         <Box alt='nav' sx={{ pt: { xs: '20px', md: '40px' } }}>
-            <Container maxWidth='xl' sx={{ px: 2, height:{xs:'40px', md:'70px'} }}>
-                <Box sx={{ display:{xs:'none', md:'flex'}, width: '50%', float: 'left', alignItems: 'stretch' }}>
-                    <Button variant='text' size='small' sx={{ color: 'black' }}>SHOP</Button>
+            <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px' } }}>
+                {/* LEFT PART OF HEADER======================================= */}
+                <Box display='flex' sx={{   width: '50%', float: 'left', alignItems: 'flex-start' }}>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize:{xs:'.8rem', md:'1.3rem'} }}>SHOP</Button>
                     <Search />
                 </Box>
-                <Box sx={{ position: 'absolute', left: '50%', width: '200px', marginLeft: '-100px', textAlign: 'center' }}>
+                {/* LOGO PART OF HEADER======================================= */}
+                <Box sx={{ position: 'absolute', left: '50%', width: '250px', marginLeft: '-125px', textAlign: 'center' }}>
                     <Link to="/" aria-label="Home">
                         <svg class="svg-logo" style={{ width: '20px' }} viewBox="1 0 11.5 11.5" version="1.1" baseProfile="tiny" id="Layer_1" x="10px" y="10px"  >
                             <g>
@@ -20,13 +22,15 @@ const Header = () => {
 			C7.9,6.6,7.8,6.9,7.9,7.2C8,7.5,8.6,8.7,9,9.7c0.6,1.4,0.7,1.8,2,1.8C12.6,11.5,13.7,10.1,13.7,7.7z"></path>
                             </g>
                         </svg>
-                        <Typography variant='h6' fontFamily='Nunito' sx={{ display: 'inline', ml: 1 }}>
+                        <Typography fontFamily='Nunito' sx={{ display: 'inline', ml: 1, fontSize:{xs:'1rem', md:'1.7rem'} }}>
                             GROOVEMADE
                         </Typography>
                     </Link>
                 </Box>
-                <Box sx={{ width: '50%', float: 'right', textAlign: 'right' }}>
-                    <Button variant='text' size='small' sx={{ color: 'black' }}>CART</Button>
+                {/* RIGHT PART OF HEADER=================================== */}
+                <Box display='flex' sx={{ width: '50%', float: 'right', justifyContent: 'right',alignItems:'flex-start' }}>
+                <Button variant='text' size='medium' sx={{ color: 'black',  fontSize:{xs:'.8rem', md:'1.3rem'} }}>CART</Button>
+
                 </Box>
             </Container>
         </Box>
