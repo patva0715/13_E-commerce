@@ -30,7 +30,7 @@ const products=[{
     price:100,
 }
 ]
-module.export=products
+module.exports=products
 
 
 // const prod=

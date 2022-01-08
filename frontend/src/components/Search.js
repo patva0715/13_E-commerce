@@ -11,7 +11,7 @@ function Search() {
       setSuggestions([])
       return
     }
-    const {data}= await axios.get(`/search?term=${e.target.value}`)
+    const {data}= await axios.get(`api/products/search?term=${e.target.value}`)
     console.log(data)
     setSuggestions(data)
   }

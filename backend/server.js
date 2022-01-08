@@ -2,44 +2,14 @@ const express = require('express')
 const dotenv = require('dotenv')
 const connectDB = require('./dbconfig.js')
 const Product = require('./models/productModel.js')
-
+const productRoutes = require('./routes/productRoutes.js')
 dotenv.config()
 connectDB()
 const app = express()
 
-// app.get('/search', async (req, res) => {
-//     let {term} = req.query
-//     if(!term)term='tennis'
-//     try {
-//         let result = await Movie.aggregate([
-//             {
-//                 $search: {
-//                     autocomplete: {
-//                         query: term,
-//                         path: "title",
-//                         fuzzy: {
-//                             'maxEdits': 2
-//                         }
-//                     }
-//                 }
-//             },
-//             {
-//                 $limit: 3,
-//             },
-//             {
-//                 $project: {
-//                     _id: 0,
-//                     title: 1,
-//                     plot: 1,
-//                 },
-//             },
-//         ])
-//         res.send(result)
-//     } catch (err) {
-//         console.log(err.message)
-//         res.status(500).send({ message: err.message })
-//     }
-// })
+
+app.use('/api/products',productRoutes)
+
 
 app.listen(5000, console.log("SERVER IN 5000"))
 
