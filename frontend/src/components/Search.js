@@ -7,7 +7,10 @@ function Search() {
   const [suggestions,setSuggestions]=useState([])
 
   const fetchSearch = async(e) => {
-    if(e.target.value.length<3)return
+    if(e.target.value.length<3){
+      setSuggestions([])
+      return
+    }
     const {data}= await axios.get(`/search?term=${e.target.value}`)
     console.log(data)
     setSuggestions(data)
@@ -16,10 +19,10 @@ function Search() {
   return (
     <>
     <div class='search-box'>
-      <input className='search-input' onChange={fetchSearch} ></input>
+      <input className='search-input' placeholder='search' onChange={fetchSearch} ></input>
       <ul className='suggestions-container'>
         {suggestions.map((item,index)=>(
-          <li className='list-container' key={index}>{item.title}</li>
+          <li className='list-container' key={index}>{item.name}</li>
         ))}
       </ul>
       </div>

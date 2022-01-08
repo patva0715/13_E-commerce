@@ -1,13 +1,13 @@
 import React from 'react'
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Container, Typography } from '@mui/material'
 import Link from './Link'
 import Search from './Search'
 const Header = () => {
     return (
-        <Box alt='nav' sx={{ pt: 1, minHeight: '40px', borderBottom: '1px solid black' }}>
-            <Box sx={{ px: 2 }}>
-                <Box display='flex' sx={{ width: '50%', float: 'left', alignItems: 'stretch' }}>
-                    <Button variant='text' size='small'sx={{color:'black'}}>SHOP</Button>
+        <Box alt='nav' sx={{ pt: { xs: '20px', md: '40px' } }}>
+            <Container maxWidth='xl' sx={{ px: 2, height:{xs:'40px', md:'70px'} }}>
+                <Box sx={{ display:{xs:'none', md:'flex'}, width: '50%', float: 'left', alignItems: 'stretch' }}>
+                    <Button variant='text' size='small' sx={{ color: 'black' }}>SHOP</Button>
                     <Search />
                 </Box>
                 <Box sx={{ position: 'absolute', left: '50%', width: '200px', marginLeft: '-100px', textAlign: 'center' }}>
@@ -26,10 +26,9 @@ const Header = () => {
                     </Link>
                 </Box>
                 <Box sx={{ width: '50%', float: 'right', textAlign: 'right' }}>
-                    <Button variant='text' size='small' sx={{color:'black'}}>CART</Button>
-
+                    <Button variant='text' size='small' sx={{ color: 'black' }}>CART</Button>
                 </Box>
-            </Box>
+            </Container>
         </Box>
     )
 }
