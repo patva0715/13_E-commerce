@@ -7,7 +7,7 @@ const LandingPage = () => {
         <Box display='flex' sx={{ width:'100%',height:'100vh',alignItems:'center'}}>
 
         <Box display='block' sx={{width:'100vw',height:'100vh', overflow:'hidden', position:'absolute', zIndex:'-1'}}>
-            <img className='landing-page-image' src='/images/homeSplash.jpg'/>
+            <img className='image-fit-cover' src='/images/homeSplash.jpg'/>
         </Box>
         <Box sx={{margin:'0 auto',maxWidth:'300px'}}>
             <Link to='products'>

@@ -28,13 +28,31 @@ const products=[{
     description:"The Grovemade Monitor Stand is a graceful ergonomic boost for your posture and your desktop, bringing your monitor to eye level while you work. Constructed from premium molded plywood, it supports up to 200 pounds, while its minimal footprint provides ample space below to stow your desktop accessories.",
     colors:['Walnut','Maple'],
     price:100,
+},{
+    name:"Wood Laptop Stand",
+    subtitle:"",
+    description:"",
+    colors:['Walnut','Maple'],
+    price:170,
+},{
+    name:"Wood MacBook Dock",
+    subtitle:"Get Vertical",
+    description:"Designed to save you space on your desk, the Grovemade MacBook Dock is an elegant vertical laptop stand that transforms your workspace. Premium hardwood and stainless steel provide beautiful heft for easy one handed operation. Your MacBook Pro is cradled and protected by a lining of merino wool felt. Natural cork feet protect your desktop.",
+    colors:['Walnut','Maple'],
+    price:120,
+},{
+    name:"Wood Headphone Stand",
+    subtitle:"Stays Put, Stands Out",
+    description:"The Grovemade Wood Headphone Stand is a bold statement piece for your desk. We focused on the form and the build quality to make something worth keeping on display, and something that’s heavy enough (2.25 lbs) to hold still while in use.",
+    colors:['Walnut','Maple'],
+    price:160,
 }
 ]
 module.exports=products
 
 
 // const prod=
-// {
+// ,{
 //     name:"",
 //     subtitle:"",
 //     description:"",

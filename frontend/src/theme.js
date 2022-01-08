@@ -3,18 +3,22 @@ import { createTheme, responsiveFontSizes } from "@mui/material";
 let lightTheme = createTheme({
     palette: {
         type: 'light',
+        primary:{
+            main:'rgba(0,0,0,.9)',
+            contrastText:'white'
+        },
         background: {
         },
     },
     typography: {
         body1: {
-            fontSize: '0.85rem',
+            fontSize: '0.9rem',
         },
         h1: {
             fontSize: '4rem',
         },
         h2: {
-            fontSize: '3rem',
+            fontSize: '2rem',
         },
         h3: {
             fontSize: '1.5rem',

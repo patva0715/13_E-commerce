@@ -58,7 +58,7 @@ router.get(
 router.get(
     '/:id',
     async(req,res)=>{
-        const product =await Product.findById(req.params.id)
+        const product =await Product.findById(req.params.id, { createdAt: 0, updatedAt: 0,__v:0 })
         if(product){
             res.status(200)
             res.json(product)

@@ -11,14 +11,14 @@ function Search() {
       setSuggestions([])
       return
     }
-    const {data}= await axios.get(`api/products/search?term=${e.target.value}`)
+    const {data}= await axios.get(`/api/products/search?term=${e.target.value}`)
     console.log(data)
     setSuggestions(data)
   }
 
   return (
     <>
-    <div class='search-box'>
+    <div className='search-box'>
       <input className='search-input' placeholder='search' onChange={fetchSearch} ></input>
       <ul className='suggestions-container'>
         {suggestions.map((item,index)=>(
