@@ -14,8 +14,11 @@ let lightTheme = createTheme({
         body1: {
             fontSize: '0.9rem',
         },
+        body2: {
+            fontSize: '1.1rem',
+        },
         h1: {
-            fontSize: '4rem',
+            fontSize: '3.2rem',
         },
         h2: {
             fontSize: '2rem',

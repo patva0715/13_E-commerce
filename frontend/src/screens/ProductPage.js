@@ -7,18 +7,20 @@ import { useProgressiveImg } from '../hooks/useProgressiveImg'
 import { useSelector, useDispatch } from 'react-redux'
 import { getProductDetail, resetProductDetail } from '../redux/actions/productActions'
 import { addToCart } from '../redux/actions/cartActions'
+import SkeletonProductPage from '../components/SkeletonProductPage'
+
 const ProductPage = () => {
     const dispatch = useDispatch()
-    const { product } = useSelector(state => state.productDetails)
+    const { product,loading } = useSelector(state => state.productDetails)
     const { id } = useParams()
     const [open, setOpen] = useState(false)
     const path = '/images/products/'
-    const [itemName, setItemName] = useState(product.name?product.name.toLowerCase().replace(/ /g, ''):'')
+    const [itemName, setItemName] = useState(product.name ? product.name.toLowerCase().replace(/ /g, '') : '')
     const [src, { blur }] = useProgressiveImg(`${path}${itemName}/${itemName}tiny.jfif`, `${path}${itemName}/${itemName}.jfif`);
 
     const handleAddToCart = () => {
         setOpen(true)
-        dispatch(addToCart(product._id,1))
+        dispatch(addToCart(product._id, 1))
     }
     const handleClose = () => {
         setOpen(false)
@@ -37,8 +39,9 @@ const ProductPage = () => {
     }, [])
     return (
         <>
-            <div>
-                {product &&
+            {loading?<SkeletonProductPage/>:
+            product&&
+                <>
                     <Box sx={{ bgcolor: 'rgba(0,0,0,.028)', width: '100%' }}>
                         <Container maxWidth='xl' sx={{ display: 'flex', flexWrap: 'wrap' }}>
                             <Box sx={{ flex: '4 1 270px', aspectRatio: '16/14', p: 1 }} className='image-holder'>
@@ -57,12 +60,12 @@ const ProductPage = () => {
                             </Box>
                         </Container>
                     </Box>
-                }
-                <Container maxWidth='md' sx={{ textAlign: 'center', p: '100px 0' }} >
-                    <Typography variant='h2'>{product.subtitle}</Typography>
-                    <Typography variant='body2' color='grey.500'>{product.description}</Typography>
-                </Container>
-            </div>
+                    <Container maxWidth='md' sx={{ textAlign: 'center', p: '100px 0' }} >
+                        <Typography variant='h2'>{product.subtitle}</Typography>
+                        <Typography variant='body2' color='grey.500'>{product.description}</Typography>
+                    </Container>
+                </>
+            }
             <Backdrop
                 sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={open}
