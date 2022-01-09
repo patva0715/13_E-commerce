@@ -12,9 +12,9 @@ const app = express()
 app.use('/api/products',productRoutes)
 // SERVE BUILD FILES TO CLIENT
 if(process.env.NODE_ENV==='production'){
-    app.use(express.static(path.join(__dirname,'/frontend/build')))
+    app.use(express.static(path.join('/frontend/build')))
     app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'frontend','build','index.html'))
+        res.sendFile(path.resolve('frontend','build','index.html'))
     })
 }else{
     app.get('/api',(req,res)=>{
