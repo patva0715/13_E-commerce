@@ -1,4 +1,4 @@
-import { Box, Typography, Container, Button, Divider } from '@mui/material'
+import { Box, Typography, Button, Divider } from '@mui/material'
 import React from 'react'
 import Link from '../components/Link'
 import { useDispatch, useSelector } from 'react-redux'
@@ -39,7 +39,7 @@ const CartItem = ({product}) =>{
         <>
             <Box  sx={{ display: 'flex' }}>
                 <Box sx={{ flex: '1 0 auto', width: '6rem', aspectRatio: '16/20' }}>
-                    <img className='image-fit-contain image-blend' src={src} />
+                    <img className={`image-fit-contain image-blend ${blur&&'blur'}`} src={src} alt='cart-item' />
                 </Box>
                 <Box display='flex' sx={{ flex: '1 1 600px', flexDirection: 'column', justifyContent: 'center', ml: 2 }}>
                     <Typography variant='body1' fontWeight='500'>{product.name}</Typography>

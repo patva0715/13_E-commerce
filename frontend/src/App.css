@@ -1,7 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@300;400;500;700&display=swap'); */
 .link-generic{
     color:black;
     text-decoration: none;
+}
+.blur{
+    filter: blur(10px);
 }
 .fas{
     margin:0px 3px;

@@ -30,8 +30,8 @@ const products=[{
     price:100,
 },{
     name:"Wood Laptop Stand",
-    subtitle:"",
-    description:"",
+    subtitle:"Elevate Your Work",
+    description:"The Grovemade Laptop Stand brings clarity and comfort to your workspace. It features an angled, stable platform for improved ergonomics, a stainless steel stop lined with premium vegetable tanned leather to hold your laptop, and room below for stowing your accessories.",
     colors:['Walnut','Maple'],
     price:170,
 },{

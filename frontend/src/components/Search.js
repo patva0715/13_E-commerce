@@ -1,8 +1,7 @@
-import { useRef, useState, useEffect } from 'react'
+import {useState, useEffect } from 'react'
 import axios from 'axios'
-import { Backdrop, Box, Divider, FormControl, OutlinedInput, Typography } from '@mui/material'
+import { Box, Divider, FormControl, OutlinedInput, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import Link from '../components/Link'
 import '../myStyles/search.css'
 
 function Search({handleClose}) {
@@ -49,7 +48,7 @@ function Search({handleClose}) {
                 <>
                   <Box display='flex' onClick={() => handleItemClick(item._id)} sx={{p:'-15px', alignItems: 'center',cursor:'pointer' }}>
                     <Box sx={{ width: '80px', aspectRatio: '1/1' }}>
-                      <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}.jfif`} />
+                      <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}.jfif`} alt='search-item' />
                     </Box>
                     <Typography variant='body1' sx={{ ml: 2 }}>
                       {item.name}

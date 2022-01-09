@@ -1,6 +1,4 @@
 import './App.css';
-import { useRef, useState, useEffect } from 'react'
-import axios from 'axios'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import ProductsMenu from './screens/ProductsMenu';
