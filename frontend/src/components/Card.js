@@ -15,7 +15,7 @@ const Card = ({ product }) => {
                     <Box sx={{ aspectRatio: '16/18', p: 1, bgcolor: 'rgba(0,0,0,.028)' }} className='image-holder'>
                         <img className='image-fit-contain image-blend' src={src} alt='product' style={{
                             filter: blur ? "blur(15px)" : "none",
-                            transition: blur ? "none" : "filter 1s ease-out"
+                            transition: "filter 1s ease-out"
                         }} />
                     </Box>
                     <Typography variant='body1' color='grey.500' fontWeight='500'>
