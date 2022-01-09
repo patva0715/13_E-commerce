@@ -21,9 +21,9 @@ const reducer=combineReducers({
     orderListMy:orderListMyReducer
 })
 
-const cartItemsFromStorage = localStorage.getItem('cartItems')?JSON.parse(localStorage.getItem('cartItems')):[]
-const userInfoFromStorage = localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')):null
-const shippingAddressFromStorage = localStorage.getItem('shippingAddress')?JSON.parse(localStorage.getItem('shippingAddress')):{}
+const cartItemsFromStorage = localStorage.getItem('GrooveCartItems')?JSON.parse(localStorage.getItem('GrooveCartItems')):[]
+const userInfoFromStorage = localStorage.getItem('GrooveUserInfo')?JSON.parse(localStorage.getItem('GrooveUserInfo')):null
+const shippingAddressFromStorage = localStorage.getItem('GrooveShippingAddress')?JSON.parse(localStorage.getItem('GrooveShippingAddress')):{}
 
 const initialState={
     cart:{
@@ -35,7 +35,6 @@ const initialState={
 
 const middleware=[thunk]
 
-// const store=createStore(reducer,initialState, applyMiddleware(thunk))
 const store=createStore(reducer,initialState, composeWithDevTools(applyMiddleware(...middleware)))
 
 

@@ -1,25 +1,50 @@
 import { Box, Typography, Container, Button, Divider } from '@mui/material'
 import React from 'react'
 import Link from '../components/Link'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeFromCart } from '../redux/actions/cartActions'
 
-const CartPopup = () => {
-    const mock = ['DESK', 'TABLE']
+const CartPopup = ({handleClose}) => {
+    const dispatch = useDispatch()
+    const { cartItems } = useSelector(state => state.cart)
+    const handleRemove = (id) =>{
+        dispatch(removeFromCart(id))
+    }
     return (
-        <Box sx={{ p: 2, backgroundColor: '#f8f8f8', margin: '0 auto' }}>
-            <Typography variant='h3'>In Your Cart</Typography>
+        <Box onClick={(e)=>e.stopPropagation()} sx={{ p: 2, width: '100%', maxWidth: '500px', backgroundColor: '#f8f8f8', margin: '0 auto' }}>
+            <Box display='flex' sx={{ justifyContent: 'space-between' }}>
+            <Typography variant='h2' gutterBottom>In Your Cart</Typography>
+                <Typography onClick={handleClose} variant='h6'>X</Typography>
+            </Box>
             <Divider />
-            {mock.map((item) => (
-                <>
-                    <Box>
-                        <Typography>{item}</Typography>
-                    </Box>
-                    <Divider />
-                </>
-            ))}
-            <Typography variant='h6'>Subtotal</Typography>
+            {cartItems.map((product, index) => {
+                const productName = product.name.toLowerCase().replace(/ /g, '')
+                return (
+                    <>
+                        <Box key={index} sx={{ display: 'flex' }}>
+                            <Box sx={{ flex: '1 0 auto', width: '6rem', aspectRatio: '16/20' }}>
+                                <img className='image-fit-contain image-blend' src={`/images/products/${productName}/${productName}.jfif`} />
+                            </Box>
+                            <Box display='flex' sx={{ flex: '1 1 600px', flexDirection: 'column', justifyContent: 'center', ml: 2 }}>
+                                <Typography variant='body1' fontWeight='500'>{product.name}</Typography>
+                                <Typography>Quantity: {product.qty}</Typography>
+                            </Box>
+                            <Box display='flex' sx={{ flex: '0 1 100px', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'flex-end' }}>
+                                <Typography fontSize='1rem' fontWeight='700'>${product.price}</Typography>
+                                <Button onClick={()=>handleRemove(product.id)} sx={{fontWeight:'400' ,textDecoration:'underline'}}>Remove</Button>
+                            </Box>
+                        </Box>
+                        <Divider />
+                    </>
+                )
+            })}
+            <Box display='flex' sx={{ justifyContent: 'space-between' }}>
+                <Typography variant='h6'>Subtotal</Typography>
+                <Typography variant='h6'>${cartItems.reduce((total, item) => { return (item.price * item.qty + total) }, 0)}</Typography>
+            </Box>
             <Divider />
             <Link to="/cart">
-            <Button fullWidth variant='contained'>GO TO CART</Button>
+                <Button fullWidth variant='contained'>GO TO CART</Button>
             </Link>
         </Box>
     )

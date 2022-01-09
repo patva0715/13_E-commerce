@@ -3,7 +3,8 @@ import { PRODUCT_LIST_FAIL,
     PRODUCT_LIST_REQUEST, 
     PRODUCT_DETAILS_REQUEST, 
     PRODUCT_DETAILS_SUCCESS, 
-    PRODUCT_DETAILS_FAIL } from "../constants/productConstants"
+    PRODUCT_DETAILS_FAIL,
+    PRODUCT_DETAILS_RESET } from "../constants/productConstants"
 
 //ALL PRODUCT REDUCER
 export const productListReducer = (state={products:[]},action) =>{
@@ -30,6 +31,8 @@ export const productDetailsReducer = (state={product:{reviews:[]}},action) =>{
             return {loading:false, product:action.payload}
         case PRODUCT_DETAILS_FAIL:
             return {loading:false, error:action.payload}
+        case PRODUCT_DETAILS_RESET:
+            return {loading:false,product:{}}
         default:
             return state
 
