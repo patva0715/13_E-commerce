@@ -12,7 +12,7 @@ const CartPopup = ({ handleClose }) => {
         <Box onClick={(e) => e.stopPropagation()} sx={{ p: 2, width: '100%', maxWidth: '500px', backgroundColor: '#f8f8f8', margin: '0 auto' }}>
             <Box display='flex' sx={{ justifyContent: 'space-between' }}>
                 <Typography variant='h2' gutterBottom>In Your Cart</Typography>
-                <Typography onClick={handleClose} variant='h6'>X</Typography>
+                <i onClick={handleClose}  class="fas fa-times"></i>
             </Box>
             <Divider />
             {cartItems.map((product, index) => <CartItem product={product} key={index}/>)}

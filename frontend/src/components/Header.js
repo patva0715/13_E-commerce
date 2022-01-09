@@ -1,16 +1,39 @@
-import React from 'react'
-import { Box, Button, Container, Typography } from '@mui/material'
+import React,{useState} from 'react'
+import { Box, Button, Container, Typography, Backdrop } from '@mui/material'
+import {useNavigate} from 'react-router-dom'
 import Link from './Link'
 import Search from './Search'
 const Header = () => {
+const navigate=useNavigate()
+  const [open, setOpen] = useState(false)
+  const handleClose = () => {
+    setOpen(false)
+  }
+  const handleOpen = (e) => {
+      console.log(e.target)
+    // e.target.blur()
+    setOpen(true)
+ 
+  }
     return (
-        <Box alt='nav' sx={{ pt: { xs: '20px', md: '40px' } }}>
-            <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px' } }}>
+        <Box alt='nav' sx={{ py: { xs: '8px', sm: '15px' } }}>
+            <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px', display: 'flex', alignItems: 'center' } }}>
                 {/* LEFT PART OF HEADER======================================= */}
-                <Box display='flex' sx={{   width: '50%', float: 'left', alignItems: 'flex-start' }}>
-                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize:{xs:'.8rem', md:'1.3rem'} }}>SHOP</Button>
-                    <Search />
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'left', alignItems: 'center', }}>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }}>SHOP</Button>
+                    <input className='search-input' placeholder='search' onClick={handleOpen} ></input>
                 </Box>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'left', alignItems: 'center' }}>
+                    <i className="fas fa-bars"></i>
+                    <i className="fas fa-search"   onClick={handleOpen}></i>
+                </Box>
+                <Backdrop
+                        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+                        onClick={handleClose}
+                    >
+                        <Search handleClose={handleClose} />
+                    </Backdrop>
                 {/* LOGO PART OF HEADER======================================= */}
                 <Box sx={{ position: 'absolute', left: '50%', width: '250px', marginLeft: '-125px', textAlign: 'center' }}>
                     <Link to="/" aria-label="Home">
@@ -22,15 +45,17 @@ const Header = () => {
 			C7.9,6.6,7.8,6.9,7.9,7.2C8,7.5,8.6,8.7,9,9.7c0.6,1.4,0.7,1.8,2,1.8C12.6,11.5,13.7,10.1,13.7,7.7z"></path>
                             </g>
                         </svg>
-                        <Typography fontFamily='Nunito' sx={{ display: 'inline', ml: 1, fontSize:{xs:'1rem', md:'1.7rem'} }}>
+                        <Typography fontFamily='Nunito' sx={{ display: 'inline', ml: 1, fontSize: { xs: '.9rem', sm: '1.2rem', md: '1.7rem' } }}>
                             GROOVEMADE
                         </Typography>
                     </Link>
                 </Box>
                 {/* RIGHT PART OF HEADER=================================== */}
-                <Box display='flex' sx={{ width: '50%', float: 'right', justifyContent: 'right',alignItems:'flex-start' }}>
-                <Button variant='text' size='medium' sx={{ color: 'black',  fontSize:{xs:'.8rem', md:'1.3rem'} }}>CART</Button>
-
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'flex-start' }}>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' }}} onClick={()=>navigate('/cart')}>CART</Button>
+                </Box>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'center' }}>
+                    <i class="fas fa-shopping-cart" onClick={()=>navigate('/cart')}></i>
                 </Box>
             </Container>
         </Box>

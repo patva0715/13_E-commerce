@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom'
 import Link from '../components/Link'
 import '../myStyles/search.css'
 
-function Search() {
+function Search({handleClose}) {
   let navigate = useNavigate()
   const [suggestions, setSuggestions] = useState([])
   const [open, setOpen] = useState(false)
-  const searchBox = useRef()
+  // const searchBox = useRef()
 
   const fetchSearch = async (term) => {
     setOpen(true)
@@ -20,17 +20,6 @@ function Search() {
     const { data } = await axios.get(`/api/products/search?term=${term}`)
     console.log(data)
     setSuggestions(data)
-  }
-
-  const handleOpen = (e) => {
-    e.target.blur()
-    setOpen(true)
-    // navigate(`// console.log(name)
-    // searchBox.current.value = String(name)/products/${id}`)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
   }
 
   const handleChange = (e) => {
@@ -47,19 +36,13 @@ function Search() {
 
   return (
     <>
-      <div >
-        <input className='search-input' placeholder='search' onClick={handleOpen} ></input>
-        <Backdrop
-          sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={open}
-          onClick={handleClose}
-        >
-          <Box sx={{ margin: '0 auto', p: 4, bgcolor: 'white', borderRadius: '1rem', maxWidth: '40ch',width:'100%' }} onClick={(e) => e.stopPropagation()}>
+    
+          <Box sx={{ margin: '0 auto', px: 2,py:3, bgcolor: 'white', borderRadius: '1rem', maxWidth: '40ch',width:'100%' }} onClick={(e) => e.stopPropagation()}>
             <FormControl sx={{ width:'100%' }}>
-              <OutlinedInput placeholder="Please enter text" onChange={handleChange} />
+              <OutlinedInput placeholder="Enter Product Name..." onChange={handleChange} />
               {/* <MyFormHelperText /> */}
             </FormControl>
-            <Box sx={{ minHeight: '500px', pt:2 }}>
+            <Box sx={{ minHeight: '400px', pt:2 }}>
               {suggestions && suggestions.map((item) => {
                 let itemName=item.name.toLowerCase().replace(/ /g, '')
                 return (
@@ -77,8 +60,6 @@ function Search() {
               )})}
             </Box>
           </Box>
-        </Backdrop>
-      </div>
     </>
 
   );

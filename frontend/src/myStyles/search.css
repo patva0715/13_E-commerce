@@ -3,13 +3,14 @@
     position: relative;
 }
 .search-input{
+    margin-left: 5px;
+    padding:8px;
     outline: none;
+    height:2rem;
     background-color: rgb(243, 243, 243);
     border: none;
     font-size: 1rem;
     width: 200px;
-    height: 40px;
-    padding: 0px 10px;
     font-family: 'Nunito';
     border-radius: 5px;
 }
