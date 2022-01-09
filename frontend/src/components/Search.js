@@ -46,7 +46,7 @@ function Search({handleClose}) {
                 let itemName=item.name.toLowerCase().replace(/ /g, '')
                 return (
                 <>
-                  <Box display='flex' onClick={() => handleItemClick(item._id)} sx={{p:'-15px', alignItems: 'center',cursor:'pointer' }}>
+                  <Box display='flex' onClick={() => handleItemClick(item._id)} sx={{p:'-15px', alignItems: 'center' }}>
                     <Box sx={{ width: '80px', aspectRatio: '1/1' }}>
                       <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}.jfif`} alt='search-item' />
                     </Box>

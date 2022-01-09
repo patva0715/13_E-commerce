@@ -4,6 +4,7 @@ const connectDB = require('./dbconfig.js')
 const productRoutes = require('./routes/productRoutes.js')
 let path = require('path')
 
+<<<<<<< HEAD
 // CONFIG APP AND DB
 dotenv.config()
 connectDB()
@@ -18,6 +19,23 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         app.use(express.static(path.join(__dirname, '/../frontend/build')))
         res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html'))
+=======
+
+dotenv.config()
+connectDB()
+const app = express()
+// console.log(__dirname)
+
+app.use(express.json())
+app.use('/api/products', productRoutes)
+
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/../frontend/build')))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+>>>>>>> parent of 70a0191 (fix server)
     })
 } else {
     app.get('/api', (req, res) => {
