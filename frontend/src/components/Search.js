@@ -1,18 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { Box, Divider, FormControl, OutlinedInput, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import '../myStyles/search.css'
 
-function Search({ handleClose }) {
+function Search({ handleClose,open }) {
   let navigate = useNavigate()
   const [suggestions, setSuggestions] = useState([])
-  const [open, setOpen] = useState(false)
-  // const searchBox = useRef()
+  const searchBox = useRef(null)
 
   const fetchSearch = async (term) => {
-    setOpen(true)
-    if (term.length < 3) {
+    if (term.length < 2) {
       setSuggestions([])
       return
     }
@@ -30,15 +28,17 @@ function Search({ handleClose }) {
     navigate(`/products/${id}`)
   }
   useEffect(() => {
-    // if (open) searchBox.current.focus()
+    if(open)searchBox.current.focus()
+    else searchBox.current.blur()
   }, [open])
 
   return (
     <>
 
-      <Box sx={{ margin: '0 auto', px: 2, py: 3, bgcolor: 'white', borderRadius: '1rem', maxWidth: '40ch', width: '100%' }} onClick={(e) => e.stopPropagation()}>
+      <Box sx={{ margin: '0 auto', px: 2, py: 3, bgcolor: 'white', borderRadius: '1rem', maxWidth: '40ch', width: '100%' }} onClick={(e) => {e.stopPropagation()
+      searchBox.current.focus()}}>
         <FormControl sx={{ width: '100%' }}>
-          <OutlinedInput placeholder="Enter Product Name..." onChange={handleChange} />
+          <OutlinedInput placeholder="Enter Product Name..." onChange={handleChange} inputRef={searchBox} />
           {/* <MyFormHelperText /> */}
         </FormControl>
         <Box sx={{ minHeight: '400px', pt: 2 }}>

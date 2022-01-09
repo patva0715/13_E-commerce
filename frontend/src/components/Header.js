@@ -1,39 +1,36 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Container, Typography, Backdrop } from '@mui/material'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Link from './Link'
 import Search from './Search'
 const Header = () => {
-const navigate=useNavigate()
-  const [open, setOpen] = useState(false)
-  const handleClose = () => {
-    setOpen(false)
-  }
-  const handleOpen = (e) => {
-      console.log(e.target)
-    // e.target.blur()
-    setOpen(true)
- 
-  }
+    const navigate = useNavigate()
+    const [open, setOpen] = useState(false)
+    const handleClose = () => {
+        setOpen(false)
+    }
+    const handleOpen = (e) => {
+        setOpen(true)
+    }
     return (
         <Box alt='nav' sx={{ py: { xs: '8px', sm: '15px' } }}>
             <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px', display: 'flex', alignItems: 'center' } }}>
                 {/* LEFT PART OF HEADER======================================= */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'left', alignItems: 'center', }}>
-                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }}onClick={()=>navigate('/products')}>SHOP</Button>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/products')}>SHOP</Button>
                     <input className='search-input' placeholder='search' onClick={handleOpen} ></input>
                 </Box>
                 <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'left', alignItems: 'center' }}>
-                    <i className="fas fa-bars"></i>
-                    <i className="fas fa-search"   onClick={handleOpen}></i>
+                    <i className="fas fa-bars" onClick={() => navigate('/products')}></i>
+                    <i className="fas fa-search" onClick={handleOpen}></i>
                 </Box>
                 <Backdrop
-                        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                        open={open}
-                        onClick={handleClose}
-                    >
-                        <Search handleClose={handleClose} />
-                    </Backdrop>
+                    sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={open}
+                    onClick={handleClose}
+                >
+                    <Search open={open} handleClose={handleClose} />
+                </Backdrop>
                 {/* LOGO PART OF HEADER======================================= */}
                 <Box sx={{ position: 'absolute', left: '50%', width: '250px', marginLeft: '-125px', textAlign: 'center' }}>
                     <Link to="/" aria-label="Home">
@@ -52,10 +49,10 @@ const navigate=useNavigate()
                 </Box>
                 {/* RIGHT PART OF HEADER=================================== */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'flex-start' }}>
-                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' }}} onClick={()=>navigate('/cart')}>CART</Button>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/cart')}>CART</Button>
                 </Box>
-                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right',flexDirection:'column', alignItems: 'flex-end' }}>
-                    <i class="fas fa-shopping-cart" onClick={()=>navigate('/cart')}></i>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <i class="fas fa-shopping-cart" onClick={() => navigate('/cart')}></i>
                 </Box>
             </Container>
         </Box>

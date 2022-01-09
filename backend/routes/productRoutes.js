@@ -3,7 +3,7 @@ const router = express.Router()
 const Product = require('../models/productModel.js')
 
 
-// @desc        Search Autocomplete products
+// @desc        Search products Autocomplete
 // @route       GET /api/products/search
 // @access      Public
 router.get('/search', async (req, res) => {
@@ -24,7 +24,7 @@ router.get('/search', async (req, res) => {
                 }
             },
             {
-                $limit: 2,
+                $limit: 4,
             },
             {
                 $project: {
@@ -52,8 +52,8 @@ router.get(
         res.json(products)
 })
 
-// @desc        Fetch all products
-// @route       GET /api/products
+// @desc        Fetch a product by ID
+// @route       GET /api/products/:id
 // @access      Public
 router.get(
     '/:id',

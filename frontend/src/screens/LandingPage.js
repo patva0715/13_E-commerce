@@ -5,7 +5,7 @@ import Link from '../components/Link'
 import { useProgressiveImg } from '../hooks/useProgressiveImg'
 
 const LandingPage = () => {
-    const [src, { blur }] = useProgressiveImg(`/images/homesplashtiny.jpg`, `/images/homesplash.jpg`);
+    const [src, { blur }] = useProgressiveImg(`/images/homesplashtiny.jpg`, `/images/homeimage.jpg`);
     return (
         <Box display='flex' sx={{ width: '100%', height: '100vh', alignItems: 'center' }}>
             <Box display='block' sx={{ width: '100vw', height: '100vh', overflow: 'hidden', position: 'absolute', zIndex: '-1' }}>

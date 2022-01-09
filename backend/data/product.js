@@ -46,18 +46,36 @@ const products=[{
     description:"The Grovemade Wood Headphone Stand is a bold statement piece for your desk. We focused on the form and the build quality to make something worth keeping on display, and something that’s heavy enough (2.25 lbs) to hold still while in use.",
     colors:['Walnut','Maple'],
     price:160,
+},{
+    name:"Wood Apple Keyboard Tray",
+    subtitle:"Precision Fit",
+    description:"The Grovemade Keyboard Tray is a distinguished landing spot for your Apple wireless keyboard. Carved from solid American hardwood, it adds a handsome accent to your workspace. Natural cork lines the base, protecting your desk and keeping your keyboard in place. Each tray is hand sanded and oiled for a rich, lustrous finish.",
+    colors:['Walnut','Maple'],
+    price:150,
+},{
+    name:"Leather & Wood Keyboard Wrist Pad",
+    subtitle:"Modern Support",
+    description:"The Grovemade Keyboard Wrist Pad features a panel of supple vegetable-tanned leather seated on a bed of hand sanded hardwood. The wrist pad elevates and provides cushioning as you type. With use, the leather will soften and develop a rich patina.",
+    colors:['Walnut','Maple'],
+    price:100,
+},{
+    name:"Wood Trackpad Tray",
+    subtitle:"Make Your Fingers Happy",
+    description:"The Grovemade Trackpad Tray provides a sleek seat for your Apple Magic Trackpad. Carved from domestic hardwood, it works in unison with our keyboard tray. A natural cork foot protects your desk. Each tray is hand sanded and oiled with a vegetable-based oil for a rich, lustrous finish.",
+    colors:['Walnut','Maple'],
+    price:80,
 }
 ]
 module.exports=products
 
 
 // const prod=
-// ,{
-//     name:"",
-//     subtitle:"",
-//     description:"",
-//     colors:['',''],
-//     price:240,
-// }
+,{
+    name:"",
+    subtitle:"",
+    description:"",
+    colors:['',''],
+    price:240,
+}
 
 // 20 products

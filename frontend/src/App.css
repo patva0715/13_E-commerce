@@ -25,3 +25,7 @@
     mix-blend-mode: multiply;
     filter: saturate(101%) brightness(105%) contrast(105%);
 }
+.non{
+    display: none;
+    background-color: red;
+}
