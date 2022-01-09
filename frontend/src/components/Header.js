@@ -54,7 +54,7 @@ const navigate=useNavigate()
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'flex-start' }}>
                     <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' }}} onClick={()=>navigate('/cart')}>CART</Button>
                 </Box>
-                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', alignItems: 'center',justifyContent:'right' }}>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right',flexDirection:'column', alignItems: 'flex-end' }}>
                     <i className="fas fa-shopping-cart" onClick={()=>navigate('/cart')}></i>
                 </Box>
             </Container>
