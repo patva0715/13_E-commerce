@@ -6,8 +6,8 @@ const SkeletonProductsMenu = () => {
     return (
         <>
             {ar.map(item => (
-                <Box key={item} sx={{ display: 'flex',gap:1, flexDirection:'column', flex: '1 1 200px', aspectRatio:'16/18', m:2}}>
-                    <Skeleton variant="rectangular" sx={{flexGrow:'1'}} />
+                <Box sx={{ display: 'block', flex: '1 1 200px', aspectRatio:'1/1', m:1}}>
+                    <Skeleton variant="rectangular" width='100%' height='100%' />
                     <Skeleton variant="text" width='40%' />
                     <Skeleton variant="text" width='20%' />
                 </Box>
