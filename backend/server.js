@@ -1,59 +1,26 @@
 const express = require('express')
 const dotenv = require('dotenv')
+const path = require('path')
+const colors = require('colors')
 const connectDB = require('./dbconfig.js')
-const Product = require('./models/productModel.js')
 const productRoutes = require('./routes/productRoutes.js')
 dotenv.config()
 connectDB()
 const app = express()
 
-
+app.use(express.json())
 app.use('/api/products',productRoutes)
+const __dirname=path.resolve()
 
+if(process.env.NODE_ENV==='production'){
+    app.use(express.static(path.join(__dirname,'/frontend/build')))
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'frontend','build','index.html'))
+    })
+}else{
+    app.get('/api',(req,res)=>{
+    res.send("api")
+})
 
-app.listen(process.env.PORT||5000, console.log("SERVER UP"))
+app.listen(process.env.PORT,console.log(`SERVER IS RUNNING ON PORT ${process.env.PORT}`.green.underline))
 
-// console.log(app)
-
-
-
-
-
-
-
-
-
-// const MongoClient = require("mongodb").MongoClient;
-// const assert = require("assert");
-// const agg = [
-//     {
-//         $search: {
-//             text: {
-//                 query: "baseball",
-//                 path: "plot",
-//             },
-//         },
-//     },
-//     {
-//         $limit: 5,
-//     },
-//     {
-//         $project: {
-//             _id: 0,
-//             title: 1,
-//             plot: 1,
-//         },
-//     },
-// ];
-// console.log("HELLO")
-// MongoClient.connect(
-//     "mongodb+srv://patrickv123:PatrickV123@cluster0.1zhkw.mongodb.net/sample_mflix?retryWrites=true&w=majority",
-//     { useNewUrlParser: true, useUnifiedTopology: true },
-//     async function (connectErr, client) {
-//         assert.equal(null, connectErr);
-//         const coll = client.db("sample_mflix").collection("movies");
-//         let cursor = await coll.aggregate(agg);
-//         await cursor.forEach((doc) => console.log(doc));
-//         client.close();
-//     }
-// );

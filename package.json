@@ -1,13 +1,16 @@
 {
+  "main": "server.js",
   "scripts": {
+    "start": "node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/dbseeder"
+    "data:import": "node backend/dbseeder",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "dependencies": {
     "assert": "^2.0.0",
-    "colors": "^1.4.0",
+    "colors": "^1.4.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "mongodb": "^4.3.0",
