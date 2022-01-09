@@ -4,6 +4,7 @@ const connectDB = require('./dbconfig.js')
 const productRoutes = require('./routes/productRoutes.js')
 let path = require('path')
 
+
 dotenv.config()
 connectDB()
 const app = express()

@@ -1,4 +1,7 @@
 {
+  "name": "13_monogdb_hackathon",
+  "version": "1.0.0",
+  "description": "A chat app definetly not a copying discord",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server",
