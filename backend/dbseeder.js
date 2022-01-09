@@ -22,7 +22,7 @@ const importData=async()=>{
         // await User.insertMany(users)
         await Product.insertMany(products)
         // await Order.insertMany(orders)
-        console.log(`DATA IMPORTED`.green.bold);
+        console.log(`DATA IMPORTED`);
         process.exit()
     } catch(error){
         console.log(`ERROR: ${error}`);

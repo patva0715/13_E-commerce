@@ -60,8 +60,8 @@ const ProductPage = () => {
                             </Box>
                         </Container>
                     </Box>
-                    <Container maxWidth='md' sx={{ textAlign: 'center', p: '100px 0' }} >
-                        <Typography variant='h2'>{product.subtitle}</Typography>
+                    <Container maxWidth='md' sx={{ textAlign: 'center', p: '100px 10px' }} >
+                        <Typography variant='h2' gutterBottom>{product.subtitle}</Typography>
                         <Typography variant='body2' color='grey.500'>{product.description}</Typography>
                     </Container>
                 </>

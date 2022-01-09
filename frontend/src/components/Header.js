@@ -20,7 +20,7 @@ const navigate=useNavigate()
             <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px', display: 'flex', alignItems: 'center' } }}>
                 {/* LEFT PART OF HEADER======================================= */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'left', alignItems: 'center', }}>
-                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }}>SHOP</Button>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }}onClick={()=>navigate('/products')}>SHOP</Button>
                     <input className='search-input' placeholder='search' onClick={handleOpen} ></input>
                 </Box>
                 <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'left', alignItems: 'center' }}>
