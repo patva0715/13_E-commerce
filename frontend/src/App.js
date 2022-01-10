@@ -6,31 +6,38 @@ import ProductPage from './screens/ProductPage';
 import LandingPage from './screens/LandingPage';
 import Cart from './screens/Cart';
 import Footer from './components/Footer';
+import Login from './screens/Login';
+import Register from './screens/Register';
 function App() {
 
   return (
     <>
-    <Router>
-      <Routes >
-        <Route path='/' element={<Main/>}>
-          <Route path='products' element={<ProductsMenu/>}/>
-          <Route path='products/:id' element={<ProductPage/>}/>
-          <Route path='cart' element={<Cart/>}/>
-          <Route index element={<LandingPage/>}/>
-        </Route>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes >
+          <Route path='/' element={<Main />}>
+            <Route path='products' element={<ProductsMenu />} />
+            <Route path='products/:id' element={<ProductPage />} />
+            <Route path='cart' element={<Cart />} />
+            <Route path='user' element={<Outlet />}>
+              <Route path='login'element={<Login />} />
+              <Route path='register'element={<Register />} />
+            </Route>
+
+            <Route index element={<LandingPage />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }
-function Main(){
-  return(
+function Main() {
+  return (
     <>
-    <Header/>
-    <main>
-      <Outlet/>
-    </main>
-    <Footer/>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
 
   )

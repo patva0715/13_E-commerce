@@ -19,7 +19,7 @@ export const login = (email,password)=>async(dispatch)=>{
             type:USER_LOGIN_SUCCESS,
             payload:data
         })
-        localStorage.setItem('userInfo', JSON.stringify(data))
+        localStorage.setItem('GrooveUserInfo', JSON.stringify(data))
     }catch(error){
         dispatch({
             type:USER_LOGIN_FAIL,
@@ -29,7 +29,7 @@ export const login = (email,password)=>async(dispatch)=>{
 }
 export const logout=()=>async(dispatch)=>{
     try{
-        localStorage.removeItem('userInfo')
+        localStorage.removeItem('GrooveUserInfo')
         dispatch({
             type:USER_LOGOUT
         })
@@ -62,7 +62,7 @@ export const register = (email,password,name)=>async(dispatch)=>{
             type:USER_LOGIN_SUCCESS,
             payload:data
         })
-        localStorage.setItem('userInfo', JSON.stringify(data))
+        localStorage.setItem('GrooveUserInfo', JSON.stringify(data))
     }catch(error){
         dispatch({
             type:USER_REGISTER_FAIL,

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Box, Button, Container, Typography, Backdrop } from '@mui/material'
+import { Box, Button, Container, Typography, Backdrop, } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import Link from './Link'
 import Search from './Search'
+import HeaderAvatar from './HeaderAvatar'
 const Header = () => {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
@@ -48,11 +49,13 @@ const Header = () => {
                     </Link>
                 </Box>
                 {/* RIGHT PART OF HEADER=================================== */}
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'flex-start' }}>
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'center' }}>
+                    <HeaderAvatar />
                     <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/cart')}>CART</Button>
                 </Box>
-                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <i class="fas fa-shopping-cart" onClick={() => navigate('/cart')}></i>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'center', }}>
+                    <HeaderAvatar />
+                    <i className="fas fa-shopping-cart" onClick={() => navigate('/cart')}></i>
                 </Box>
             </Container>
         </Box>
