@@ -27,7 +27,7 @@ const Cart = () => {
                         <>
                             <Box key={index} sx={{ display: 'flex' }}>
                                 <Box sx={{ flex: '1 0 auto', width: '25%', aspectRatio: '16/20' }}>
-                                    <img className='image-fit-contain image-blend' src={`/images/products/${productName}/${productName}.jfif`} />
+                                    <img className='image-fit-contain image-blend' src={`/images/products/${productName}/${productName}med.jfif`} />
                                 </Box>
                                 <Box display='flex' sx={{ flex: '1 1 600px', flexDirection: 'column', justifyContent: 'center', ml: 2 }}>
                                     <Typography variant='body2' fontWeight='500'>{product.name}</Typography>

@@ -48,7 +48,7 @@ function Search({ handleClose,open }) {
               <>
                 <Box display='flex' onClick={() => handleItemClick(item._id)} sx={{ p: '-15px', alignItems: 'center', cursor: 'pointer' }}>
                   <Box sx={{ width: '80px', aspectRatio: '1/1' }}>
-                    <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}.jfif`} alt='search-item' />
+                    <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}med.jfif`} alt='search-item' />
                   </Box>
                   <Typography variant='body1' sx={{ ml: 2 }}>
                     {item.name}

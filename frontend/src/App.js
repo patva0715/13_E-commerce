@@ -5,6 +5,7 @@ import ProductsMenu from './screens/ProductsMenu';
 import ProductPage from './screens/ProductPage';
 import LandingPage from './screens/LandingPage';
 import Cart from './screens/Cart';
+import Footer from './components/Footer';
 function App() {
 
   return (
@@ -29,6 +30,7 @@ function Main(){
     <main>
       <Outlet/>
     </main>
+    <Footer/>
     </>
 
   )

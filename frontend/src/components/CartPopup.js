@@ -31,7 +31,7 @@ const CartItem = ({product}) =>{
     const dispatch = useDispatch()
     const productName = product.name.toLowerCase().replace(/ /g, '')
     const path = '/images/products/'
-    const [src, { blur }] = useProgressiveImg(`${path}${productName}/${productName}tiny.jfif`, `${path}${productName}/${productName}.jfif`);
+    const [src, { blur }] = useProgressiveImg(`${path}${productName}/${productName}tiny.jfif`, `${path}${productName}/${productName}med.jfif`);
     const handleRemove = (id) => {
         dispatch(removeFromCart(id))
     }
