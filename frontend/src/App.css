@@ -9,6 +9,7 @@
     margin:0px 3px;
     font-size: 1.13rem;
     z-index: 3;
+    cursor: pointer;
 }
 .image-fit-cover{
     object-fit: cover;

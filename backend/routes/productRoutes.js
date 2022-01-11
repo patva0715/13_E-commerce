@@ -62,9 +62,11 @@ router.get(
 // @route       GET /api/products/category
 // @access      Public
 router.get('/category', async (req, res) => {
+    // console.log(req.originalUrl)
     let { term } = req.query
-    if(!term) term = ''
-    // else term = term.split('%')
+    // console.log(term)
+    // if(!term) term = ''
+    term = term.split(',')
     console.log(term)
     
     try {
@@ -91,7 +93,7 @@ router.get('/category', async (req, res) => {
                 $project: {
                     _id: 0,
                     name: 1,
-                    // price: 1,
+                    price: 1,
                     category: 1
                     // score: { $meta: "searchScore" }
                 },

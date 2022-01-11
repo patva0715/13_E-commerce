@@ -4,18 +4,21 @@ import { PRODUCT_LIST_FAIL,
     PRODUCT_DETAILS_REQUEST, 
     PRODUCT_DETAILS_SUCCESS, 
     PRODUCT_DETAILS_FAIL,
-    PRODUCT_DETAILS_RESET } from "../constants/productConstants"
+    PRODUCT_DETAILS_RESET, 
+    PRODUCT_LIST_CATEGORY_CHANGE} from "../constants/productConstants"
 
 //ALL PRODUCT REDUCER
-export const productListReducer = (state={products:[]},action) =>{
+export const productListReducer = (state={products:[],category:[]},action) =>{
     // console.log('in reducer')
     switch(action.type){
         case PRODUCT_LIST_REQUEST:
-            return {loading:true, products:[]}
+            return {...state,loading:true, products:[]}
         case PRODUCT_LIST_SUCCESS:
-            return {loading:false, products:action.payload}
+            return {...state,loading:false, products:action.payload}
         case PRODUCT_LIST_FAIL:
             return {loading:false, error:action.payload}
+        case PRODUCT_LIST_CATEGORY_CHANGE:
+                return {...state,category:action.payload}
         default:
             return state
 
