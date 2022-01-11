@@ -1,9 +1,11 @@
 import React from 'react'
 import { Avatar, Menu, MenuItem } from '@mui/material'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import {logout} from '../redux/actions/userActions'
 const HeaderAvatar = () => {
     let navigate=useNavigate()
+    const dispatch=useDispatch()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const { userInfo } = useSelector(state => state.userLogin)
@@ -14,6 +16,12 @@ const HeaderAvatar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleNavigate = (link) =>{
+        if(link==='/logout')dispatch(logout())
+        else navigate(link)
+        handleClose()
+        
+    }
     return (
         <>
             <Avatar sx={{ width: '30px', height: '30px',cursor:'pointer', mr: 1 }}
@@ -32,12 +40,12 @@ const HeaderAvatar = () => {
                 }}
             >
                 {userInfo ?
-                    <>
-                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                    </> :
-                    <MenuItem onClick={()=>navigate('/user/login')}>Login</MenuItem>
+                    <div>
+                        <MenuItem onClick={()=>handleNavigate('/user/profile')}>Profile</MenuItem>
+                        <MenuItem onClick={()=>handleNavigate('/user/orders')}>My Orders</MenuItem>
+                        <MenuItem onClick={()=>handleNavigate('/logout')}>Logout</MenuItem>
+                    </div> :
+                    <MenuItem onClick={()=>handleNavigate('/user/login')}>Login</MenuItem>
                 }
 
             </Menu>

@@ -2,11 +2,18 @@ import { Box, Typography, Button, Container, Divider } from '@mui/material'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeFromCart } from '../redux/actions/cartActions'
+import {useNavigate} from 'react-router-dom'
 const Cart = () => {
+    let navigate = useNavigate()
     const dispatch = useDispatch()
     const { cartItems } = useSelector(state => state.cart)
+    const { userInfo } = useSelector(state => state.userLogin)
     const handleRemove = (id) => {
         dispatch(removeFromCart(id))
+    }
+    const handleCheckout = () =>{
+        if(!userInfo)navigate('/user/login?redirect=/checkout')
+        else navigate('/checkout')
     }
     return (
         <Container maxWidth='md'>
@@ -14,11 +21,11 @@ const Cart = () => {
                 {!cartItems.length ?
                     <Box sx={{ textAlign: 'center' }}>
                         <Typography variant='h1' gutterBottom sx={{ alignSelf: 'center' }}>Your Cart is Empty</Typography>
-                        <Button variant='contained' sx={{ py: 1, mb: 4, fontSize: { xs: '.7rem', md: '1.1rem' } }}>BACK TO SHOP</Button>
+                        <Button variant='contained' sx={{ py: 1, mb: 4, fontSize: { xs: '.7rem', md: '1.1rem' } }} onClick={()=>navigate('/products')}>BACK TO SHOP</Button>
                     </Box> :
                     <>
                         <Typography variant='h1' gutterBottom sx={{ alignSelf: 'center' }}>My Cart</Typography>
-                        <Button variant='contained' sx={{ py: 1, mb: 4, fontSize: { xs: '.7rem', md: '1.1rem' } }}>CONTINUE TO CHECKOUT</Button>
+                        <Button variant='contained' sx={{ py: 1, mb: 4, fontSize: { xs: '.7rem', md: '1.1rem' } }} onClick={handleCheckout}>CONTINUE TO CHECKOUT</Button>
                     </>
                 }
                 {cartItems.map((product, index) => {

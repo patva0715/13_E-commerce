@@ -1,4 +1,4 @@
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Box, Typography, OutlinedInput, Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import { login } from '../redux/actions/userActions'
 const Login = () => {
     let navigate = useNavigate()
     let dispatch = useDispatch()
+    let [searchParams, setSearchParams] = useSearchParams();
     const { userInfo, error: loginError } = useSelector(state => state.userLogin)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -26,10 +27,14 @@ const Login = () => {
         }
     }
     const loadDemo = () => {
-        setEmail('poopoo@toilet.com')
-        setPassword('pooplol')
+        setEmail('admin@example.com')
+        setPassword('123456')
     }
     useEffect(() => {
+        if(userInfo&&searchParams.get('redirect')){
+            navigate(-1)
+            return
+        }
         if (userInfo) {
             navigate('/')
         }

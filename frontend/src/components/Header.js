@@ -53,9 +53,12 @@ const Header = () => {
                     <HeaderAvatar />
                     <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/cart')}>CART</Button>
                 </Box>
-                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right', justifyContent: 'right', alignItems: 'center', }}>
-                    <HeaderAvatar />
-                    <i className="fas fa-shopping-cart" onClick={() => navigate('/cart')}></i>
+                <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'right',flexDirection:'column', alignItems: 'flex-end', }}>
+                    <Box display='flex' sx={{alignItems:'center'}}>
+                        <HeaderAvatar />
+                        <i className="fas fa-shopping-cart" onClick={() => navigate('/cart')}></i>
+                    </Box>
+
                 </Box>
             </Container>
         </Box>

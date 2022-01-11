@@ -19,13 +19,21 @@ function App() {
             <Route path='products/:id' element={<ProductPage />} />
             <Route path='cart' element={<Cart />} />
             <Route path='user' element={<Outlet />}>
-              <Route path='login'element={<Login />} />
-              <Route path='register'element={<Register />} />
+              <Route path='login' element={<Login />} />
+              <Route path='register' element={<Register />} />
             </Route>
-
             <Route index element={<LandingPage />} />
           </Route>
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
+
       </Router>
     </>
   );
