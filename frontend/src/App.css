@@ -33,7 +33,7 @@
 .image-container{
     background-color:rgba(233, 233, 233, 0.527);
     height: 100%;
-    transition: opacity .4s ease-in-out;
+    transition: opacity .6s ease-in-out;
     /* background-color:rgba(233, 233, 233, 0.527); */
 }
 .image-container-front{

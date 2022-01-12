@@ -17,7 +17,7 @@ const Card = ({ product }) => {
         setMousedOver(false)
     }
     return (
-        <Box sx={{ display: 'block', maxWidth: '300px', flex: {xs:'1 1 120px', md:'1 1 250px'}, mb: 2, mx: 1 }}>
+        <Box sx={{ display: 'block', maxWidth:{ xs:'50%',md:'25%'}, flex: {xs:'1 1 120px', md:'1 1 250px'}, mb: 2, mx: 1 }}>
             <Link to={`/products/${product._id}`}>
                 <Box sx={{ width: '100%' }} >
                     <Box sx={{ aspectRatio: '16/18', position: 'relative' }} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
@@ -26,7 +26,7 @@ const Card = ({ product }) => {
                         }}>
                             <img className='image-blend image-fit-contain' src={src} alt='product' style={{
                                 filter: blur ? "blur(15px)" : "none",
-                                transition: blur ? "none" : "filter 1s ease-out",
+                                transition: blur ? "none" : "filter .4s ease-out",
                             }} />
                         </div>
                         <div className='image-container image-container-front' style={{

@@ -26,12 +26,14 @@ const ProductPage = () => {
         setOpen(false)
     }
     useEffect(() => {
-        dispatch(getProductDetail(id))
+        if(id!==undefined&&id)dispatch(getProductDetail(id))
+        
     }, [id])
     useEffect(() => {
         if (product.name) setItemName(product.name.toLowerCase().replace(/ /g, ''))
     }, [product])
     useEffect(() => {
+        window.scrollTo(0, 0);
         return (() => {
             console.log('reset')
             dispatch(resetProductDetail())

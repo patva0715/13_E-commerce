@@ -75,7 +75,73 @@ const products=[{
     colors:['Walnut','Maple'],
     category:'keyboard',
     price:80,
+},{
+    name:"Wood Dish",
+    subtitle:"Appreciate the Little Things",
+    description:"The Grovemade Wood Dish is an elegantly simple approach to taming desktop clutter. It's the perfect catchall for paper clips, push pins, loose change, and other workspace miscellanea. Carved from solid walnut and maple, it's hand sanded and oiled for a smooth, lustrous finish.",
+    colors:['Walnut','Maple'],
+    category:'pads',
+    price:40,
+},{
+    name:"Leather Desk Pad",
+    subtitle:"Set Your Workspace Apart",
+    description:"The leather desk pad brings visual structure and organization to your workspace. The premium, vegetable-tanned leather is soft and smooth, and it will develop a distinguished patina over time.",
+    colors:['Black','Tan'],
+    category:'pads',
+    price:140,
+},{
+    name:"Wood MagSafe Stand",
+    subtitle:"Lifted Performance",
+    description:"Our stand is purpose-built to capitalize on the speed and convenience of MagSafe charging while also being a delight to use. A solid steel base securely anchors your device, and hand sanded hardwood and vegetable-tanned leather create a unique modern look.",
+    colors:['Walnut','Brass','Maple'],
+    category:'stands',
+    price:120,
+},{
+    name:"Black Task Knife",
+    subtitle:"A Fresh Cut",
+    description:"The Grovemade Task Knife is designed specifically for light-duty uses at your desk—the edge geometry excels at opening boxes, while intentionally not being as sharp as a pocket knife. It’s machined from solid steel with a matte black ceramic coating, for a practically indestructible, heirloom-quality tool worth displaying. Hefty and delicate at the same time, it feels excellent in hand.",
+    colors:['Black','Brass','Silver'],
+    category:'stands',
+    price:70,
+},{
+    name:"Black Pen",
+    subtitle:"Mighty Smooth",
+    description:"Precision machined from solid aluminum, the Grovemade Black Pen has a single piece body built to last a lifetime. A durable ceramic coating gives it a matte black finish.",
+    colors:['Black','Brass','Silver'],
+    category:'tools',
+    price:70,
 }
+,{
+    name:"Notepad",
+    subtitle:"Well Noted",
+    description:"Our refillable notepad is there when you need to jot a note or doodle, with a narrow profile that fits into the spaces at your desk. A solid, ceramic-coated, machined aluminum base anchors your note taking. 70# paper with a subtle dot grid on both sides is reversible and clean—flip pages without leaving a torn stub.",
+    colors:['Black','Brass','Silver'],
+    category:'tools',
+    price:100,
+}
+,{
+    name:"Sticky Note Stand",
+    subtitle:"Ideas that Stick",
+    description:"Our refillable sticky note stand give you a dedicated spot for quick notes and brainstorm. The solid, ceramic-coated steel base anchors the pad to keep it steady while you write and peel. Pairs with our modern dot grid sticky notes.",
+    colors:['Black','Brass','Silver'],
+    category:'tools',
+    price:60,
+},{
+    name:"Wood Wall Shelf",
+    subtitle:"Showcase What Matters",
+    description:"Our wood shelf is designed to hold the things you hold dear. Available in two convenient bundles or individually, to fit a variety of spaces from home to office. We craft each from 15-ply premium walnut plywood, aluminum and natural cork hand stained with Japanese calligraphy ink.",
+    colors:['Walnut','Maple'],
+    category:'wallmount',
+    price:320,
+},{
+    name:"Wood Catch-All",
+    subtitle:"Right Where You Left It",
+    description:"A distinctive home for your phone, wallet, and other everyday items, our wall mounted catch-all keeps your essentials in one easy-to-access place. Sculpted premium plywood adds depth and warmth, while the Merino wool felt lining protects your stuff from scratches. A trio of hidden brass hooks are perfect for keys.",
+    colors:['Walnut','Maple'],
+    category:'wallmount',
+    price:150,
+}
+
 ]
 module.exports=products
 
@@ -86,6 +152,7 @@ module.exports=products
     subtitle:"",
     description:"",
     colors:['',''],
+    category:'stands',
     price:240,
 }
 

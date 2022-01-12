@@ -20,11 +20,11 @@ const ProductsMenu = () => {
         if(category)dispatch(listProducts(category))
     },[category])
     return (
-        <Container maxWidth='xl' sx={{ display: 'flex', pt:3,flexDirection:{xs:'column',md:'row'}  }}>
+        <Container maxWidth='xl' sx={{ display: 'flex', pt:3,flexDirection:{xs:'column',md:'row',minHeight:'90vh'}  }}>
             <Box sx={{flex:'0 1 auto',minWidth:'245px',px:1, mb:2, mr:{xs:0,md:3}}}>
                 <SearchFilter/>
             </Box>
-            <Box display='flex' sx={{justifyContent:'space-around', flexWrap:'wrap',flex:'1 4 500px'}}>
+            <Box display='flex' sx={{justifyContent:'left', flexWrap:'wrap',flex:'1 4 500px'}}>
             {loading ? <SkeletonProductsMenu /> :
                 <>
                     {products&&products.map((product) => {

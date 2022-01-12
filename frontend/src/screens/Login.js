@@ -46,7 +46,7 @@ const Login = () => {
         <Box display='flex'>
             {/* LOGIN FORM CONTAINER */}
             <Box sx={{ flex: '1 1 400px', display: 'flex', alignItems: 'center', minHeight: '95vh', justifyContent: { xs: 'center', md: 'right' } }}>
-                <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column', maxWidth: '500px', px: 2, textAlign: 'center' }}>
+                <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column', maxWidth: '500px', px: 2,mr:{xs:0,md:'35px'}, textAlign: 'center' }}>
                     <Typography variant='h3' gutterBottom>LOGIN</Typography>
                     <Typography varaint='body2' gutterBottom color='error'>{error && error}</Typography>
                     {/* EMAIL AND PASSWORD INPUT */}
@@ -61,7 +61,7 @@ const Login = () => {
                 </Box>
             </Box>
             {/* IMAGE CONTAINER */}
-            <Box sx={{ flex: '1 1 500px', display: { xs: 'none', md: 'flex' }, aspectRatio: '1/1' }}>
+            <Box sx={{ flex: '1 1 500px', display: { xs: 'none', md: 'flex' }, aspectRatio: '1/1',maxHeight:'95vh' }}>
                 <img className='image-fit-cover' src='/images/homeimage.jpg' />
             </Box>
         </Box>
