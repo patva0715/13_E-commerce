@@ -13,7 +13,7 @@ const Cart = () => {
     }
     const handleCheckout = () =>{
         if(!userInfo)navigate('/user/login?redirect=/checkout')
-        else navigate('/checkout')
+        else navigate('/checkout/information')
     }
     return (
         <Container maxWidth='md'>

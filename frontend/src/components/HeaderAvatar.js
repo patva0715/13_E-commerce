@@ -42,7 +42,7 @@ const HeaderAvatar = () => {
                 {userInfo ?
                     <div>
                         <MenuItem onClick={()=>handleNavigate('/user/profile')}>Profile</MenuItem>
-                        <MenuItem onClick={()=>handleNavigate('/user/orders')}>My Orders</MenuItem>
+                        <MenuItem onClick={()=>handleNavigate('/order/')}>My Orders</MenuItem>
                         <MenuItem onClick={()=>handleNavigate('/logout')}>Logout</MenuItem>
                     </div> :
                     <MenuItem onClick={()=>handleNavigate('/user/login')}>Login</MenuItem>
