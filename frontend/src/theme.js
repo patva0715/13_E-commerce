@@ -12,7 +12,7 @@ let lightTheme = createTheme({
     },
     typography: {
         body1: {
-            fontSize: '0.9rem',
+            fontSize: '0.8rem',
         },
         body2: {
             fontSize: '1.1rem',
