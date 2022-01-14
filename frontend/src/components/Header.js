@@ -14,15 +14,15 @@ const Header = () => {
         setOpen(true)
     }
     return (
-        <Box alt='nav' sx={{ py: { xs: '8px', sm: '15px' } }}>
+        <Box alt='nav' sx={{ py: { xs: '8px', sm: '15px' }, borderBottom:'2px solid #eee' }}>
             <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px', display: 'flex', alignItems: 'center' } }}>
                 {/* LEFT PART OF HEADER======================================= */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'left', alignItems: 'center', }}>
-                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/products')}>SHOP</Button>
+                    <Button variant='text' size='medium' sx={{ color: 'black', fontSize: { xs: '.8rem', md: '1.3rem' } }} onClick={() => navigate('/products')}>CATALOG</Button>
                     <input className='search-input' placeholder='search' onClick={handleOpen} ></input>
                 </Box>
                 <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '50%', float: 'left', alignItems: 'center' }}>
-                    <i className="fas fa-bars" onClick={() => navigate('/products')}></i>
+                    <i className="fas fa-th" onClick={() => navigate('/products')}></i>
                     <i className="fas fa-search" onClick={handleOpen}></i>
                 </Box>
                 <Backdrop

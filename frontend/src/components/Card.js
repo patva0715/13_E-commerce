@@ -17,34 +17,38 @@ const Card = ({ product }) => {
         setMousedOver(false)
     }
     return (
-        <Box sx={{ display: 'block', maxWidth:{ xs:'50%',md:'25%'}, flex: {xs:'1 1 120px', md:'1 1 250px'}, mb: 2, mx: 1 }}>
+        <Box sx={{ display: 'block', maxWidth: { xs: '50%', md: '25%' }, flex: { xs: '1 1 120px', md: '1 1 230px' }, mb: 2, mx: 1 }}>
             <Link to={`/products/${product._id}`}>
                 <Box sx={{ width: '100%' }} >
+                    {/* IMAGES HOLDER */}
                     <Box sx={{ aspectRatio: '16/18', position: 'relative' }} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+                        {/* FRONT IMAGE */}
                         <div className='image-container' style={{
                             opacity: mousedOver ? '0' : '1'
                         }}>
                             <img className='image-blend image-fit-contain' src={src} alt='product' style={{
                                 filter: blur ? "blur(15px)" : "none",
-                                transition: blur ? "none" : "filter .4s ease-out",
+                                transition: blur ? "none" : "filter .1s ease-out",
                             }} />
                         </div>
+                        {/* END FRONT IMAGE */}
+                        {/* BACK IMAGE */}
                         <div className='image-container image-container-front' style={{
                             opacity: mousedOver ? '1' : '0'
                         }}>
-                            <img className='image-blend image-fit-contain card-front-img' src={`${path}${itemName}/${itemName}medsub.jfif`} alt='product' style={{
-                                // filter: blur2 ? "blur(15px)" : "none",
-                                // transition: blur2 ? "none" : "filter 1s ease-out",
-                            }} />
+                            <img className='image-blend image-fit-contain card-front-img' src={`${path}${itemName}/${itemName}medsub.jfif`} alt='product' />
                         </div>
-
+                        {/* END BACK IMAGE */}
                     </Box>
+                    {/* END IMAGES HOLDER */}
+                    {/* NAME AND PRICE SECTION */}
                     <Typography variant='body1' color='grey.500' fontWeight='500'>
                         {product.name}
                     </Typography>
                     <Typography variant='body1' color='grey.500' fontWeight='500'>
                         $ {product.price}
                     </Typography>
+                    {/* END NAME AND PRICE SECTION */}
                 </Box>
             </Link>
         </Box>

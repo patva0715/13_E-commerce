@@ -46,9 +46,9 @@ function Search({ handleClose,open }) {
             let itemName = item.name.toLowerCase().replace(/ /g, '')
             return (
               <>
-                <Box display='flex' onClick={() => handleItemClick(item._id)} sx={{ p: '-15px', alignItems: 'center', cursor: 'pointer' }}>
+                <Box display='flex' className='suggestion-card' onClick={() => handleItemClick(item._id)} sx={{ p: '-15px', alignItems: 'center', cursor: 'pointer', bgcolor:'#fafafa' }}>
                   <Box sx={{ width: '80px', aspectRatio: '1/1' }}>
-                    <img className='image-fit-contain' src={`/images/products/${itemName}/${itemName}med.jfif`} alt='search-item' />
+                    <img className='image-fit-contain image-blend' src={`/images/products/${itemName}/${itemName}med.jfif`} alt='search-item' />
                   </Box>
                   <Typography variant='body1' sx={{ ml: 2 }}>
                     {item.name}

@@ -13,24 +13,24 @@ const Sidebar = ({  }) => {
     let taxPrice = addDecimals(Number((.15 * itemsPrice).toFixed(2)))
     let totalPrice = Number(itemsPrice) + Number(shippingPrice) + Number(taxPrice)
     return (
-        <Box sx={{ height: '100%', width: '100%', maxWidth: { xs: '100%', md: '400px' }, p: 4 }}>
+        <Box sx={{ height: '100%', width: '100%', maxWidth: { xs: '100%', md: '400px' }, p: 4, pt:{xs:3,md:'70px'}, borderTop:'2px solid #eee' }}>
             {cartItems.map((product, index) => <CartItem product={product} key={index} />)}
             <Box display='flex' sx={{ py: 1, justifyContent: 'space-between' }}>
                 <Typography variant='body1'>Subtotal</Typography>
-                <Typography variant='body1' fontWeight='500'>${itemsPrice}</Typography>
+                <Typography variant='body1' fontWeight='400'>${itemsPrice}</Typography>
             </Box>
             <Box display='flex' sx={{ py: 1, justifyContent: 'space-between' }}>
                 <Typography variant='body1'>Shipping</Typography>
-                <Typography variant='body1' fontWeight='500'>Calculated at next step</Typography>
+                <Typography variant='body1' fontWeight='400'>Calculated at next step</Typography>
             </Box>
             <Box display='flex' sx={{ py: 1, justifyContent: 'space-between' }}>
                 <Typography variant='body1'>Taxes (estimated)</Typography>
-                <Typography variant='body1' fontWeight='500'>${taxPrice}</Typography>
+                <Typography variant='body1' fontWeight='400'>${taxPrice}</Typography>
             </Box>
             <Divider />
-            <Box display='flex' sx={{ py: 1, justifyContent: 'space-between' }}>
+            <Box display='flex' sx={{ py: 1, justifyContent: 'space-between', display:'flex',alignItems:'center'}}>
                 <Typography variant='body1'>Total</Typography>
-                <Typography variant='body1' fontWeight='500'>${totalPrice}</Typography>
+                <Typography fontSize='1.4rem' fontWeight='500' sx={{}}><span style={{fontSize:'.7rem',fontWeight:'400',marginRight:'5px'}}>USD</span>${totalPrice}</Typography>
             </Box>
         </Box>
     )
@@ -55,7 +55,7 @@ const CartItem = ({ product }) => {
                     <Typography>Quantity: {product.qty}</Typography>
                 </Box>
                 <Box display='flex' sx={{ flex: '0 1 100px', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'flex-end' }}>
-                    <Typography fontSize='1rem' fontWeight='700'>${product.price}</Typography>
+                    <Typography fontSize='1rem' fontWeight='400'>${product.price}</Typography>
                 </Box>
             </Box>
             <Divider />

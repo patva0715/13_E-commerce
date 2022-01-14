@@ -56,7 +56,7 @@ const Payment = () => {
             // eslint-disable-next-line
         }
     }, [success])
-    const breadcrumbs = [<Link to='/cart'>CART</Link>, <Link to='/checkout/information'>INFORMATION</Link>, <Link to='/checkout/payment'>PAYMENT</Link>,]
+    const breadcrumbs = [<Link to='/cart'style={{color:'#999'}}>CART</Link>, <Link to='/checkout/information'style={{color:'#999'}}>INFORMATION</Link>, <Link to='/checkout/payment'>PAYMENT</Link>,]
 
     return (
         <Box sx={{ display: 'flex', flexWrap: { xs: 'wrap', md: 'noWrap' }, minHeight: '100vh' }}>

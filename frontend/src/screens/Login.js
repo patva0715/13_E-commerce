@@ -51,7 +51,7 @@ const Login = () => {
                     <Typography varaint='body2' gutterBottom color='error'>{error && error}</Typography>
                     {/* EMAIL AND PASSWORD INPUT */}
                     <OutlinedInput placeholder='email' sx={{ mb: 2 }} onChange={(e) => setEmail(e.target.value)} value={email} />
-                    <OutlinedInput placeholder='password' sx={{ mb: 4 }} onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <OutlinedInput placeholder='password' type='password' sx={{ mb: 4 }} onChange={(e) => setPassword(e.target.value)} value={password} />
                     {/* END EMAIL AND PASSWORD INPUT */}
                     {/* ACTION GROUP */}
                     <Button variant='contained' onClick={handleLogin} sx={{ mb: 2 }}>LOGIN</Button>

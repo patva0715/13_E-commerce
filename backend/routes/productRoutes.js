@@ -62,49 +62,36 @@ router.get(
 // @route       GET /api/products/category
 // @access      Public
 router.get('/category', async (req, res) => {
-    // console.log(req.originalUrl)
     let { term } = req.query
-    // console.log(term)
-    // if(!term) term = ''
-    term = term.split(',')
-    console.log(term)
-    
+    let category = term.split(',')
+    // CATEGORY  string array of different categories
     try {
         let result = await Product.aggregate([
-           { $search: {
-                'index':'groovemade',
-                "compound": {
-                  "filter": [{
-                    "autocomplete": {
-                      "query": term,
-                      "path": "category"
+            {
+                $search: {
+                    'index': 'groovemade',
+                    "compound": {
+                        "filter": [{
+                            "autocomplete": {
+                                "query": category,
+                                "path": "category"
+                            }
+                        }]
                     }
-                  }]
                 }
-              }},
-
-
-            // {
-            //     $limit: 4,
-            // },
-
-
+            },
             {
                 $project: {
                     _id: 0,
                     name: 1,
                     price: 1,
                     category: 1
-                    // score: { $meta: "searchScore" }
                 },
             },
-
-
             { $sort: { price: -1, } }
-
-
-
         ])
+
+        
         res.send(result)
     } catch (err) {
         console.log(err.message)

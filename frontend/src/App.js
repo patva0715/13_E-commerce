@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
         <Routes >
-        <Route path='/checkout' element={<Outlet />}>
+        <Route path='/checkout' element={<main><Outlet /></main>}>
               <Route path='information' element={<Information />} />
               <Route path='payment' element={<Payment />} />
             </Route>

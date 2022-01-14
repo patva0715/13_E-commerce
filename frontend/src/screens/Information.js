@@ -9,19 +9,19 @@ const Information = () => {
     let navigate = useNavigate()
     const { shippingAddress } = useSelector(state => state.cart)
     const dispatch = useDispatch()
-    const [firstName, setFirstName] = useState(shippingAddress.firstName)
-    const [lastName, setLastName] = useState(shippingAddress.lastName)
-    const [address, setAddress] = useState(shippingAddress.address)
-    const [city, setCity] = useState(shippingAddress.city)
-    const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
-    const [country, setCountry] = useState(shippingAddress.country)
+    const [firstName, setFirstName] = useState(shippingAddress.firstName||'John')
+    const [lastName, setLastName] = useState(shippingAddress.lastName||'Doe')
+    const [address, setAddress] = useState(shippingAddress.address||'112233 Foo st')
+    const [city, setCity] = useState(shippingAddress.city||'Los Angeles')
+    const [postalCode, setPostalCode] = useState(shippingAddress.postalCode||'992233')
+    const [country, setCountry] = useState(shippingAddress.country||'United States')
 
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(saveShippingAddress({ address, city, postalCode, country }))
         navigate('/checkout/payment')
     }
-    const breadcrumbs = [<Link to='/cart'>CART</Link>, <Link to='/checkout/information'>INFORMATION</Link>, <Link to='/checkout/information'>PAYMENT</Link>,]
+    const breadcrumbs = [<Link to='/cart' style={{color:'#999'}}>CART</Link>, <Link to='/checkout/information'>INFORMATION</Link>, <Link to='/checkout/information'style={{color:'#999'}}>PAYMENT</Link>,]
     return (
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row'},minHeight:'100vh' }}>
             {/* =================================LEFT SIDE - INPUT=============================== */}

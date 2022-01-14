@@ -1,3 +1,6 @@
+main{
+    min-height: 95vh;
+}
 .link-generic{
     color:black;
     text-decoration: none;
@@ -33,13 +36,18 @@
 .image-container{
     background-color:rgba(233, 233, 233, 0.527);
     height: 100%;
-    transition: opacity .6s ease-in-out;
+    transition: opacity .3s ease-in-out;
     /* background-color:rgba(233, 233, 233, 0.527); */
 }
 .image-container-front{
     position: absolute;
     top:0;
     left:0;
+}
+
+
+.suggestion-card:hover{
+    background-color: #eee;
 }
 
 

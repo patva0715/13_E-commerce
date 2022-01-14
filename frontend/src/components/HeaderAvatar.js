@@ -17,7 +17,10 @@ const HeaderAvatar = () => {
         setAnchorEl(null);
     };
     const handleNavigate = (link) =>{
-        if(link==='/logout')dispatch(logout())
+        if(link==='/logout'){
+            dispatch(logout())
+            navigate('/')
+        }
         else navigate(link)
         handleClose()
         

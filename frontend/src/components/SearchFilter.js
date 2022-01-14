@@ -8,7 +8,7 @@ const SearchFilter = () => {
     const [tools, setTools] = useState(false)
     const [keyboard, setKeyboard] = useState(false)
     const [wallmount, setWallmount] = useState(false)
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
 
     const { category } = useSelector(state => state.productList)
     const dispatch = useDispatch()
