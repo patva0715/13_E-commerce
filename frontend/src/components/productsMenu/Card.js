@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import Link from '../components/Link'
-import { useProgressiveImg } from '../hooks/useProgressiveImg'
+import Link from '../Link'
+import { useProgressiveImg } from '../../hooks/useProgressiveImg'
 
 const Card = ({ product }) => {
     const itemName = product.name.toLowerCase().replace(/ /g, '')
@@ -17,7 +17,7 @@ const Card = ({ product }) => {
         setMousedOver(false)
     }
     return (
-        <Box sx={{ display: 'block', maxWidth: { xs: '50%', md: '25%' }, flex: { xs: '1 1 120px', md: '1 1 230px' }, mb: 2, mx: 1 }}>
+        <Box sx={{ display: 'block', maxWidth: { xs: '50%', md: '25%' }, flex: { xs: '1 1 120px', md: '1 1 230px' } }}>
             <Link to={`/products/${product._id}`}>
                 <Box sx={{ width: '100%' }} >
                     {/* IMAGES HOLDER */}

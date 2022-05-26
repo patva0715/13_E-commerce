@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FormControlLabel, FormGroup, Checkbox, Paper, Typography, Collapse, Button } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeCategory } from '../redux/actions/productActions'
+import { changeCategory } from '../../redux/actions/productActions'
 const SearchFilter = () => {
     const [pads, setPads] = useState(false)
     const [stands, setStands] = useState(false)
@@ -50,3 +50,8 @@ const SearchFilter = () => {
 }
 
 export default SearchFilter
+
+// MONGO_URI=mongodb+srv://patrickv123:PatrickV123@cluster0.1zhkw.mongodb.net/groovemade?retryWrites=true&w=majority
+// NODE_ENV=development
+// PORT=5000
+// JWT_SECRET=abc123 

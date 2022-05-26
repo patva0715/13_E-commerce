@@ -18,10 +18,12 @@ function App() {
     <>
       <Router>
         <Routes >
-        <Route path='/checkout' element={<main><Outlet /></main>}>
-              <Route path='information' element={<Information />} />
-              <Route path='payment' element={<Payment />} />
-            </Route>
+
+          <Route path='/checkout' element={<main><Outlet /></main>}>
+            <Route path='information' element={<Information />} />
+            <Route path='payment' element={<Payment />} />
+          </Route>
+
           <Route path='/' element={<Main />}>
             <Route path='products' element={<ProductsMenu />} />
             <Route path='products/:id' element={<ProductPage />} />
@@ -29,13 +31,14 @@ function App() {
             <Route path='user' element={<Outlet />}>
               <Route path='login' element={<Login />} />
               <Route path='register' element={<Register />} />
-            </Route> 
+            </Route>
             <Route path='order' element={<Outlet />}>
-              <Route path='' element={<MyOrders/>} />
+              <Route path='' element={<MyOrders />} />
               <Route path=':id' element={<OrderPage />} />
             </Route>
             <Route index element={<LandingPage />} />
           </Route>
+
           <Route
             path="*"
             element={
