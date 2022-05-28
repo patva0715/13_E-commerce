@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Box, Container, Typography, Button, Backdrop } from '@mui/material'
 import CartPopup from '../components/CartPopup'
-import { useProgressiveImg } from '../hooks/useProgressiveImg'
 import { useSelector, useDispatch } from 'react-redux'
 import { getProductDetail, resetProductDetail } from '../redux/actions/productActions'
 import { addToCart } from '../redux/actions/cartActions'
@@ -18,11 +17,6 @@ const ProductPage = () => {
     const { product, loading } = useSelector(state => state.productDetails)
     const [open, setOpen] = useState(false)
 
-    const itemName = useMemo(() => {
-        console.log(product)
-        if (product.name) return product.name.toLowerCase().replace(/ /g, '')
-    }, [product])
-
     const handleAddToCart = () => {
         dispatch(addToCart(product._id, 1))
         setOpen(true)
@@ -35,8 +29,7 @@ const ProductPage = () => {
         if (id !== undefined && id) {
             dispatch(getProductDetail(id))
         }
-
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         return (() => {
             dispatch(resetProductDetail())
         })
@@ -44,28 +37,27 @@ const ProductPage = () => {
 
     return (
         <>
-            {loading ?
+            {loading && product ?
                 <SkeletonProductPage /> :
-                product &&
                 <>
-                    {/* PRODUCT GALLERY AND INFO ============== */}
+                    {/* PRODUCT GALLERY AND INFO ============================ */}
                     <Box sx={{ bgcolor: 'rgba(0,0,0,.028)' }}>
-                        <Container maxWidth='lg' sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                            {/* PRODUCT IMAGE ================ */}
-                            <Box sx={{ flex: '5 1 300px', aspectRatio: '16/14' }}>
+                        <Container maxWidth='xl' sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            {/* PRODUCT CAROUSEL ============================ */}
+                            <Box sx={{ flex: '5 1 500px', aspectRatio: '16/12' }}>
                                 <Carousel images={product.imgSrc} />
                             </Box>
-                            {/* PRODUCT NAME/COLOR/PRICE/BUY ================ */}
-                            <FlexBox column sx={{ flex: '1 3 300px',p:2 }}>
-                                <Typography variant='h2' >{product.name}</Typography>
+                            {/* PRODUCT NAME/COLOR/PRICE/BUY ================= */}
+                            <FlexBox column sx={{ flex: '1 3 100px',p:4}}>
+                                <Typography variant='h2' sx={{whiteSpace:'nowrap'}} >{product.name}</Typography>
                                 <Typography variant='body2'>{product.colors && product.colors[0]}</Typography>
                                 <Typography variant='body2'>${product.price}</Typography>
-                                <Button variant='contained' sx={{ width: '100%' }} onClick={handleAddToCart}>ADD TO CART</Button>
+                                <Button variant='contained' onClick={handleAddToCart}>ADD TO CART</Button>
                             </FlexBox>
                         </Container>
                     </Box>
 
-                    {/* PRODUCT DESCRIPTION ============== */}
+                    {/* PRODUCT DESCRIPTION ================================== */}
                     <Container maxWidth='md' sx={{ textAlign: 'center', py: '50px' }} >
                         <Typography variant='h2' >{product.subtitle}</Typography>
                         <Typography variant='body2' color='grey.500'>{product.description}</Typography>

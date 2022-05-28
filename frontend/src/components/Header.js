@@ -14,7 +14,7 @@ const Header = () => {
         setOpen(true)
     }
     return (
-        <Box alt='nav' sx={{ py: { xs: '8px', sm: '15px' }, borderBottom:'2px solid #eee' }}>
+        <Box alt='nav' sx={{ py:'5px', borderBottom:'2px solid #eee' }}>
             <Container maxWidth='xl' sx={{ px: 2, height: { xs: '40px', md: '70px', display: 'flex', alignItems: 'center' } }}>
                 {/* LEFT PART OF HEADER======================================= */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, width: '50%', float: 'left', alignItems: 'center', }}>
