@@ -1,14 +1,17 @@
 import { Box, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Link from '../Link'
 import { useProgressiveImg } from '../../hooks/useProgressiveImg'
 
+const path = '/images/products/'
+
 const Card = ({ product }) => {
-    const itemName = product.name.toLowerCase().replace(/ /g, '')
-    const path = '/images/products/'
+    // const itemName = product.name.toLowerCase().replace(/ /g, '')
+    const itemName = useMemo(() => {
+        if (product.name) return product.name.toLowerCase().replace(/ /g, '')
+    }, [product])
     const [mousedOver, setMousedOver] = useState(false)
     const [src, { blur }] = useProgressiveImg(`${path}${itemName}/${itemName}tiny.jfif`, `${path}${itemName}/${itemName}med.jfif`);
-    // const [src2, { blur2 }] = useProgressiveImg(`${path}${itemName}/${itemName}tiny.jfif`, `${path}${itemName}/${itemName}medsub.jfif`);
 
     const handleMouseOver = () => {
         setMousedOver(true)

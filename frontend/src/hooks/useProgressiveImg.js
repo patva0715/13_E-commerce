@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const useProgressiveImg = (lowQualitySrc, highQualitySrc) => {
-    const [src, setSrc] = React.useState(lowQualitySrc);
+    const [src, setSrc] = React.useState(undefined);
     React.useEffect(() => {
-        if(lowQualitySrc.length>3){
+        if(!highQualitySrc.includes('undefined')){
             setSrc(lowQualitySrc);
             const img = new Image();
             img.src = highQualitySrc;

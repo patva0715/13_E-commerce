@@ -8,7 +8,7 @@ import {Provider} from 'react-redux'
 import store from './redux/store'
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
   <Provider store={store}>
 
     <ThemeProvider theme={lightTheme}>
@@ -18,8 +18,8 @@ ReactDOM.render(
     </ThemeProvider>
     </Provider>
 
-  </React.StrictMode>,
-  document.getElementById('root')
+  // </React.StrictMode>,
+  ,document.getElementById('root')
 );
 
 

@@ -11,10 +11,22 @@ const products = require('./data/product.js')
 
 dotenv.config()
 
-connectDB() 
+connectDB()
 
-const importData=async()=>{
-    try{
+const importData = async () => {
+    try {
+        // console.log(products)
+        for (let i = 0; i < products.length; i++) {
+            let formattedName = products[i].name.toLowerCase().replace(/ /g, '')
+            let ar = []
+            for (let j = 0; j < products[i].imgSrcSize; j++) {
+                ar.push(`https://ik.imagekit.io/oqrgl5cil3a/groovemade/${formattedName}/${j}.jfif`)
+            }
+            products[i]={...products[i],imgSrc:ar}
+        }
+
+
+    
         console.log(products)
         await Product.deleteMany()
         // await User.deleteMany()
@@ -24,7 +36,7 @@ const importData=async()=>{
         // await Order.insertMany(orders)
         console.log(`DATA IMPORTED`);
         process.exit()
-    } catch(error){
+    } catch (error) {
         console.log(`ERROR: ${error}`);
         process.exit(1)
     }

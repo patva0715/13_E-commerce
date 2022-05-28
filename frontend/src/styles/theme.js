@@ -1,11 +1,12 @@
-import { createTheme, responsiveFontSizes } from "@mui/material";
+import { responsiveFontSizes } from "@mui/material";
+import { createTheme } from '@mui/material/styles'
 
 let lightTheme = createTheme({
     palette: {
         type: 'light',
-        primary:{
-            main:'rgba(0,0,0,.9)',
-            contrastText:'white'
+        primary: {
+            main: 'rgba(0,0,0,.9)',
+            contrastText: 'white'
         },
         background: {
         },
@@ -28,50 +29,20 @@ let lightTheme = createTheme({
         },
         fontFamily: 'Roboto',
     },
-    props: {
-        MuiButtonBase: {
-            disableRipple: true,
+    components: {
+        MuiTypography: {
+            defaultProps: {
+                gutterBottom: true
+            }
         },
-        MuiButton: {
-            size: 'small',
-        },
-        MuiButtonGroup: {
-            size: 'small',
-        },
-        MuiCheckbox: {
-            size: 'small',
-        },
-        MuiFab: {
-            size: 'small',
-        },
-        MuiFormControl: {
-            margin: 'dense',
-            size: 'small',
-        },
-        MuiFormHelperText: {
-            margin: 'dense',
-        },
-        MuiIconButton: {
-            size: 'small',
-        },
-        MuiInputBase: {
-            margin: 'dense',
-        },
-        MuiInputLabel: {
-            margin: 'dense',
-        },
-        MuiRadio: {
-            size: 'small',
-        },
-        MuiSwitch: {
-            size: 'small',
-        },
-        MuiTextField: {
-            margin: 'dense',
-            size: 'small',
-        },
+        MuiButton:{
+            defaultProps:{
+                disableRipple:true
+            }
+        }
     },
+
 })
-lightTheme=responsiveFontSizes(lightTheme)
+lightTheme = responsiveFontSizes(lightTheme)
 
 export { lightTheme }

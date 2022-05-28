@@ -41,6 +41,12 @@ const productSchema = mongoose.Schema({
         type: Array,
 
     },
+    imgSrcSize:{
+        type : Number
+    },
+    imgSrc:{
+        type: Array
+    }
 }, {
     timestamps: true
 })
