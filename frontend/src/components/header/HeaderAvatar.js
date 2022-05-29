@@ -2,7 +2,7 @@ import React from 'react'
 import { Avatar, Menu, MenuItem } from '@mui/material'
 import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {logout} from '../redux/actions/userActions'
+import {logout} from '../../redux/actions/userActions'
 const HeaderAvatar = () => {
     let navigate=useNavigate()
     const dispatch=useDispatch()

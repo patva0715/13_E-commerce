@@ -1,6 +1,6 @@
 import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
-import Header from './components/Header'
+import Header from './components/header/Header'
 import ProductsMenu from './screens/ProductsMenu';
 import ProductPage from './screens/ProductPage';
 import LandingPage from './screens/LandingPage';

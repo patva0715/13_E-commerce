@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Box, Container, Typography, Button, Backdrop } from '@mui/material'
-import CartPopup from '../components/CartPopup'
+import { Box, Container, Typography, Button } from '@mui/material'
+import CartPopup from '../components/productPage/CartPopup'
 import { useSelector, useDispatch } from 'react-redux'
 import { getProductDetail, resetProductDetail } from '../redux/actions/productActions'
 import { addToCart } from '../redux/actions/cartActions'
 import SkeletonProductPage from '../components/productPage/SkeletonProductPage'
 import FlexBox from '../components/utils/FlexBox'
 import Carousel from '../components/productPage/Carousel'
-
-const path = '/images/products/'
 
 const ProductPage = () => {
     const dispatch = useDispatch()

@@ -13,28 +13,21 @@ const ProductsMenu = () => {
 
     // DISPATCH FETCH PRODUCTS AFTER MENU IS LOADED
     useEffect(() => {
-        dispatch(listProducts())
-    }, [dispatch])
-
-    // DISPATCH FETCH PRODUCTS WHEN CATEGORY OR SORT BY CHANGES
-    useEffect(() => {
-        if (category) dispatch(listProducts(category))
-    }, [category])
+        dispatch(listProducts(category))
+    }, [dispatch, category])
 
     return (
-        <Container maxWidth='xl' sx={{ display: 'flex', pt: 3, flexDirection: { xs: 'column', md: 'row' } }}>
-            <Box sx={{ flex: '0 1 auto', minWidth: '245px', px: 1, mb: 2, mr: { xs: 0, md: 3 } }}>
+        <Container maxWidth='xl' sx={{ display: 'flex', pt: 3, flexWrap:'wrap'}}>
+            <Box sx={{ flex: '1 1 250px',  px: 2, mb: 2}}>
                 <SearchFilter />
             </Box>
-            <FlexBox sx={{ justifyContent: 'left', flex: '1 4 500px',gap:2 }}>
-                {loading ?
-                    <SkeletonProductsMenu />
-                    :
-                    <>
-                        {products && products.map((product) => <Card product={product} key={product._id} />)}
-                    </>
-                }
-            </FlexBox>
+            {loading ?
+                <SkeletonProductsMenu />
+                :
+                <FlexBox sx={{ justifyContent: 'left', flex: '100 1 500px', gap: 2 }}>
+                    {products && products.map((product) => <Card product={product} key={product._id} />)}
+                </FlexBox>
+            }
         </Container>
     )
 }

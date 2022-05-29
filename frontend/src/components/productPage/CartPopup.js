@@ -1,9 +1,9 @@
 import { Box, Typography, Button, Divider, Backdrop } from '@mui/material'
 import React from 'react'
-import Link from '../components/Link'
+import Link from '../Link'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCart } from '../redux/actions/cartActions'
-import { useProgressiveImg } from '../hooks/useProgressiveImg'
+import { removeFromCart } from '../../redux/actions/cartActions'
+import { useProgressiveImg } from '../../hooks/useProgressiveImg'
 
 const CartPopup = ({ handleClose,open }) => {
     const { cartItems } = useSelector(state => state.cart)
