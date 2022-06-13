@@ -20,7 +20,7 @@ const products=[{
     description:"Our iPad stand is designed to hold your iPad at just the right angle for viewing and working. It's built with premium American hardwood and stainless steel, with merino wool felt to cushion and protect your device. Integrated cord management keeps your desk tidy.",
     colors:['Walnut','Maple'],
     category:'stands',
-    imgSrcSize:2,
+    imgSrcSize:6,
     price:90,
 },{
     name:"Wood Laptop Riser",
@@ -28,7 +28,7 @@ const products=[{
     description:"Our laptop riser lifts your screen extra high for ideal ergonomics, combined with a small, stable footprint that fits into the tight spaces at your desk. Integrated cord management keeps things tidy and merino wool felt protects and cushions your device.",
     colors:['Walnut','Maple'],
     category:'stands',
-    imgSrcSize:2,
+    imgSrcSize:5,
     price:150,
 },{
     name:"Wood Monitor Stand",
@@ -60,7 +60,7 @@ const products=[{
     description:"The Grovemade Wood Headphone Stand is a bold statement piece for your desk. We focused on the form and the build quality to make something worth keeping on display, and something that’s heavy enough (2.25 lbs) to hold still while in use.",
     colors:['Walnut','Maple'],
     category:'stands',
-    imgSrcSize:2,
+    imgSrcSize:5,
     price:160,
 },{
     name:"Wood Apple Keyboard Tray",
@@ -100,7 +100,7 @@ const products=[{
     description:"The leather desk pad brings visual structure and organization to your workspace. The premium, vegetable-tanned leather is soft and smooth, and it will develop a distinguished patina over time.",
     colors:['Black','Tan'],
     category:'pads',
-    imgSrcSize:2,
+    imgSrcSize:4,
     price:140,
 },{
     name:"Wood MagSafe Stand",
@@ -108,7 +108,7 @@ const products=[{
     description:"Our stand is purpose-built to capitalize on the speed and convenience of MagSafe charging while also being a delight to use. A solid steel base securely anchors your device, and hand sanded hardwood and vegetable-tanned leather create a unique modern look.",
     colors:['Walnut','Brass','Maple'],
     category:'stands',
-    imgSrcSize:2,
+    imgSrcSize:5,
     price:120,
 },{
     name:"Black Task Knife",
@@ -124,7 +124,7 @@ const products=[{
     description:"Precision machined from solid aluminum, the Grovemade Black Pen has a single piece body built to last a lifetime. A durable ceramic coating gives it a matte black finish.",
     colors:['Black','Brass','Silver'],
     category:'tools',
-    imgSrcSize:2,
+    imgSrcSize:4,
     price:70,
 }
 ,{

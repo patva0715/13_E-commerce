@@ -17,14 +17,14 @@ const ProductsMenu = () => {
     }, [dispatch, category])
 
     return (
-        <Container maxWidth='xl' sx={{ display: 'flex', pt: 3, flexWrap:'wrap'}}>
+        <Container maxWidth='xl' sx={{ display: 'flex', pt: 3, flexWrap:'wrap',minHeight:'90vh'}}>
             <Box sx={{ flex: '1 1 250px',  px: 2, mb: 2}}>
                 <SearchFilter />
             </Box>
             {loading ?
                 <SkeletonProductsMenu />
                 :
-                <FlexBox sx={{ justifyContent: 'left', flex: '100 1 500px', gap: 2 }}>
+                <FlexBox sx={{ justifyContent: 'left',alignItems:'flex-start', flex: '100 1 500px', gap: 2 }}>
                     {products && products.map((product) => <Card product={product} key={product._id} />)}
                 </FlexBox>
             }
