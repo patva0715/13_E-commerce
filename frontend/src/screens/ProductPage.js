@@ -40,13 +40,13 @@ const ProductPage = () => {
                 <>
                     {/* PRODUCT GALLERY AND INFO ============================ */}
                     <Box sx={{ bgcolor: 'rgba(0,0,0,.028)' }}>
-                        <Container maxWidth='xl' sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <Container maxWidth='xl' sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap',px:{xs:1,sm:2,md:'50px'} }}>
                             {/* PRODUCT CAROUSEL ============================ */}
-                            <Box sx={{ flex: '5 1 500px', aspectRatio: '16/12' }}>
+                            <Box sx={{ flex: '2 1 500px' }}>
                                 <Carousel images={product.imgSrc} />
                             </Box>
                             {/* PRODUCT NAME/COLOR/PRICE/BUY ================= */}
-                            <FlexBox column sx={{ flex: '1 3 100px',p:4}}>
+                            <FlexBox column sx={{ flex: '1 3 400px',p:4}}>
                                 <Typography variant='h2' sx={{whiteSpace:'nowrap'}} >{product.name}</Typography>
                                 <Typography variant='body2'>{product.colors && product.colors[0]}</Typography>
                                 <Typography variant='body2'>${product.price}</Typography>

@@ -1,7 +1,7 @@
 .frame {
-  background-color: white;
+  /* background-color: red; */
   /* border: 1px solid red; */
-  height: 100%;
+  aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
 }
@@ -14,13 +14,12 @@
 }
 .item {
   /* border: 1px solid green; */
-  padding: 3rem 0;
 
   background-color: rgba(0, 0, 0, 0.028);
   transition: all 200ms ease-in-out;
   width: 100%;
   max-height: 100%;
-  aspect-ratio: 16/12;
+  /* aspect-ratio: 16/12; */
   z-index: 1;
 }
 .item img {

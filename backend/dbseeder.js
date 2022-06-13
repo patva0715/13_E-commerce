@@ -11,10 +11,10 @@ const products = require('./data/product.js')
 
 dotenv.config()
 
-connectDB()
 
 const importData = async () => {
-    try {
+await connectDB()
+try {
         // console.log(products)
         for (let i = 0; i < products.length; i++) {
             let formattedName = products[i].name.toLowerCase().replace(/ /g, '')

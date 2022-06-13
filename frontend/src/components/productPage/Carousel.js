@@ -14,12 +14,13 @@ const Carousel = ({ images }) => {
         else setWidth(400)
     }, [])
     return (
-            <IKContext urlEndpoint='https://ik.imagekit.io/oqrgl5cil3a'>
-                {images && width && images.length > 0 && <div className={styles.frame}>
+        <IKContext urlEndpoint='https://ik.imagekit.io/oqrgl5cil3a'>
+            {images && width && images.length > 0 &&
+                <div className={styles.frame}>
                     <div className={styles.slide} style={{ left: `-${currentSlide}00%`, minWidth: `${images.length}00%` }} >
                         {images && images.map((src, index) => (
                             <div key={index} className={styles.item} style={{ opacity: `${index == currentSlide ? '1' : '.3'}` }}>
-                                <IKImage className='image-fit-contain image-blend' path={src.replace('https://ik.imagekit.io/oqrgl5cil3a', '').replace('.jfif', '').replace('&','_')} transformation={[{
+                                <IKImage className='image-fit-cover image-blend' path={src.replace('https://ik.imagekit.io/oqrgl5cil3a', '').replace('.jfif', '').replace('&', '_')} transformation={[{
                                     width: width,
                                     height: width
                                 }]} />
@@ -27,9 +28,9 @@ const Carousel = ({ images }) => {
                         ))}
                     </div>
                     <div className={styles.navSlide}>
-                        {images && images.map((src, index) => (
+                        {images.map((src, index) => (
                             <div alt='image-thumbnail' key={index} className={styles.navItem} onClick={() => handleClick(index)} >
-                                <IKImage className='image-fit-contain image-blend' path={src.replace('https://ik.imagekit.io/oqrgl5cil3a', '').replace('.jfif', '').replace('&','_')} transformation={[{
+                                <IKImage className='image-fit-contain image-blend' path={src.replace('https://ik.imagekit.io/oqrgl5cil3a', '').replace('.jfif', '').replace('&', '_')} transformation={[{
                                     width: 50,
                                     height: 50
                                 }]} />
@@ -37,8 +38,8 @@ const Carousel = ({ images }) => {
                         ))}
                     </div>
                 </div>
-                }
-            </IKContext>
+            }
+        </IKContext>
     )
 }
 export default Carousel

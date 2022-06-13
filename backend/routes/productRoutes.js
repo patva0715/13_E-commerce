@@ -105,6 +105,10 @@ router.get('/category', async (req, res) => {
 router.get(
     '/:id',
     async (req, res) => {
+        if(req.params.id=='undefined'){
+            res.status(401)
+            throw new Error("ERROR")
+        }
         const product = await Product.findById(req.params.id, { createdAt: 0, updatedAt: 0, __v: 0 })
         if (product) {
             res.status(200)

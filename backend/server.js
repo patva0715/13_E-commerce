@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes.js')
 const orderRoutes = require('./routes/orderRoutes.js')
 let path = require('path')
 const {errorHandler} = require('./middleWare/errorMiddleWare.js')
+
 // CONFIG APP AND DB
 dotenv.config()
 connectDB()
